@@ -1,0 +1,132 @@
+/* =========================================================================
+   MAISON ROYALE — Responsive system
+   Breakpoints: 1200 / 992 / 768 / 576. No horizontal scroll guaranteed.
+   ========================================================================= */
+
+@media (max-width: 1200px) {
+  .container-lux { width: min(100% - 2rem, 1080px); }
+  .prod-grid, .cat-grid, .brand-grid, .svc-grid { grid-template-columns: repeat(3, 1fr); }
+  .hero .float-1 { right: 4%; }
+  .hero .float-2 { display: none; }
+}
+
+@media (max-width: 992px) {
+  .container-lux { width: calc(100% - 2rem); }
+  .nav-menu { display: none; }
+  .nav-toggle { display: grid; }
+  .topbar .tb-right { display: none; }
+  .prod-grid, .cat-grid, .brand-grid, .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .arch-a { grid-column: span 12; grid-row: auto; min-height: 420px; }
+  .arch-b, .arch-c { grid-column: span 6; }
+  .split { grid-template-columns: 1fr; }
+  .split .split-media { max-width: 560px; }
+  .event-card { grid-template-columns: 1fr; }
+  .event-card .media { min-height: 240px; }
+  .wide-card { grid-template-columns: 1fr; }
+  .wide-card .media { min-height: 220px; }
+  .newsletter { grid-template-columns: 1fr; gap: 22px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .info-strip { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-item.g2 { grid-column: span 2; }
+  .vip-band .vip-stamp { display: none; }
+  .hero .hero-inner { padding-top: 130px; }
+  .vip-band .vip-list { grid-template-columns: 1fr; }
+  .counters-band .counters { grid-template-columns: repeat(2, 1fr); }
+  .navbar-lux { position: absolute; }
+  .navbar-lux.scrolled { position: fixed; }
+}
+
+@media (max-width: 768px) {
+  .container-lux { width: calc(100% - 1.6rem); }
+  .prod-grid, .cat-grid, .brand-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .svc-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  h1 { font-size: clamp(2.2rem, 9vw, 3rem); }
+  .hero .hero-title { font-size: clamp(2.6rem, 11vw, 4rem); }
+  .hero .hero-float { display: none; }
+  .hero .hero-meta { gap: 26px; }
+  .page-hero { padding-top: 8rem; }
+  .map-card .map-panel { position: relative; left: auto; top: auto; max-width: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; }
+  .map-card { display: flex; flex-direction: column; }
+  .map-card .map-scene { flex: 1; min-height: 300px; position: relative; }
+  .brand-card { padding: 24px 20px; }
+  .filter-bar select { flex: 1; min-width: 140px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .section { padding: 3.6rem 0; }
+  .toast-stack { left: 16px; right: 16px; bottom: 16px; }
+  .toast-lux { min-width: 0; width: 100%; }
+  .detail-grid { grid-template-columns: 1fr; }
+  .countdown .cd-block { min-width: 52px; }
+}
+
+@media (max-width: 576px) {
+  .prod-grid, .cat-grid, .brand-grid { grid-template-columns: 1fr; }
+  .svc-grid, .counters-band .counters, .info-strip { grid-template-columns: 1fr; }
+  .arch-b, .arch-c, .gallery-grid, .gallery-item.g2 { grid-column: span 12; }
+  .arch-a { min-height: 340px; }
+  .gallery-item { aspect-ratio: 4/3; }
+  .gallery-item.g2 { aspect-ratio: 4/3; }
+  .topbar { display: none; }
+  .navbar-lux .nav-inner { height: 64px; }
+  .nav-logo .word b { font-size: 1.05rem; letter-spacing: .18em; }
+  .admin-pill { display: none; }
+  .hero .hero-cta .btn { width: 100%; }
+  .newsletter .news-form .btn { width: 100%; }
+  .btn-lg { width: 100%; }
+  .event-card .event-body { padding: 20px; }
+  .sec-head.row-split { flex-direction: column; align-items: flex-start; }
+  .modal-body { padding: 20px; }
+  .map-card .map-panel p { font-size: .78rem; }
+  .filter-bar .search-field { min-width: 100%; }
+  .so-bar input { font-size: 1.05rem; }
+  .result-count { display: block; margin-bottom: 6px; }
+}
+
+@media (min-width: 2560px) {
+  :root { font-size: 18px; }
+  .container-lux { width: min(1560px, 72vw); }
+}
+
+/* dashboard responsive */
+@media (max-width: 1200px) {
+  .dash-charts-2 { grid-template-columns: 1fr !important; }
+  .dash-kpis { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 992px) {
+  .dash-shell .dash-sidebar { transform: translateX(-104%); }
+  .dash-shell.sidebar-open .dash-sidebar { transform: none; }
+  .dash-shell.sidebar-open .dash-backdrop { opacity: 1; pointer-events: auto; }
+  .dash-sidebar-collapse { display: none !important; }
+  .dash-main { padding-left: 0 !important; }
+  .dash-kpis { grid-template-columns: repeat(2, 1fr) !important; }
+  .dash-search-box { display: none; }
+  .dash-date-selector { display: none; }
+  .dash-grid-2, .dash-grid-3 { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 640px) {
+  .dash-kpis { grid-template-columns: 1fr 1fr !important; gap: 12px; }
+  .dash-table-wrap { padding: 0 !important; }
+  .dash-header .dash-profile .dash-name { display: none; }
+  .data-table { border: 0; }
+  .data-table thead { display: none; }
+  .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; }
+  .data-table tr { margin-bottom: 16px; border: 1px solid var(--line-soft); border-radius: var(--r); padding: 8px; background: var(--cream); }
+  .data-table td { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 7px 10px; border: 0 !important; text-align: right; }
+  .data-table td::before { content: attr(data-label); font-size: .66rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); text-align: left; }
+  .data-table td[data-intent="actions"] { justify-content: flex-end; border-top: 1px dashed var(--line-soft) !important; padding-top: 12px; margin-top: 6px; }
+  .dash-toolbar { flex-direction: column; align-items: stretch !important; }
+  .dash-toolbar .grow { width: 100%; }
+  .dash-header { padding: 0 16px !important; margin-left: 0 !important; }
+.dash-header { padding: 0 16px !important; margin-left: 0 !important; }
+
+/* 9-item nav density on mid-sized screens */
+@media (max-width: 1320px) {
+  .nav-menu > li > a { padding: 10px 9px; font-size: .68rem; }
+  .nav-actions .admin-pill { display: none; }
+}
+@media (max-width: 1150px) {
+  .nav-menu > li > a { padding: 10px 6px; font-size: .63rem; }
+}
+html { scroll-behavior: smooth; }
+}

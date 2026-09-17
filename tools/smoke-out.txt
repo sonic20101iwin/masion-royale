@@ -1,0 +1,17 @@
+C:\Users\Owner\Downloads\jaenp fajsd\js\dashboard-crud.js:290
+  global.MR.__productsReady = { initProducts: initProducts, initProductsFilters: initProductsFilters };
+                            ^
+
+TypeError: Cannot set properties of undefined (setting '__productsReady')
+    at C:\Users\Owner\Downloads\jaenp fajsd\js\dashboard-crud.js:290:29
+    at Object.<anonymous> (C:\Users\Owner\Downloads\jaenp fajsd\js\dashboard-crud.js:477:3)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object..js (node:internal/modules/cjs/loader:2003:10)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at loadCJSModuleWithModuleLoad (node:internal/modules/esm/translators:372:15)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:244:9)
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+
+Node.js v24.19.0

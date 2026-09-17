@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Store Directory — Maison Royale</title>
+<meta name="description" content="Browse every boutique of Maison Royale — fashion, dining, lifestyle and entertainment across six curated floors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="stores" data-root="../">
+
+<!-- ============================== top bar ============================== -->
+<div class="topbar">
+  <div class="container-lux">
+    <div class="tb-left">
+      <span class="topbar-phone"><i class="fa-solid fa-phone"></i> +33 1 42 60 00 00</span>
+      <span class="tb-sep"></span>
+      <span class="topbar-hours"><i class="fa-solid fa-clock"></i> Mon–Sat 10:00 – 22:00 · Sun 11:00 – 20:00</span>
+    </div>
+    <div class="tb-right">
+      <a href="about.html"><i class="fa-solid fa-crown"></i> The Royale Circle</a>
+      <span class="tb-sep"></span>
+      <a href="../dashboard/index.html"><i class="fa-solid fa-sliders"></i> Management Portal</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== navbar ============================== -->
+<header class="navbar-lux">
+  <div class="container-lux">
+    <div class="nav-inner">
+      <a class="nav-logo" href="../index.html" aria-label="Maison Royale — Home">
+        <span class="monogram"><span>R</span></span>
+        <span class="word"><b>MAISON ROYALE</b><small>PARIS</small></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="stores.html" class="active">Stores</a></li>
+          <li><a href="fashion.html">Fashion</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="entertainment.html">Entertainment</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" data-search-open aria-label="Search the mall"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <a class="icon-btn has-dot" href="offers.html" aria-label="Exclusive offers"><i class="fa-solid fa-bag-shopping"></i><span class="dot"></span></a>
+        <a class="btn btn-gold btn-sm admin-pill" href="../dashboard/index.html"><i class="fa-solid fa-sliders"></i> Manager</a>
+        <button class="icon-btn nav-toggle" data-drawer-open aria-label="Open menu" aria-controls="mobileDrawer"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ mobile drawer ============================ -->
+<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="drawer-backdrop" data-drawer-close></div>
+  <div class="drawer-panel">
+    <div class="drawer-head">
+      <a class="nav-logo" href="../index.html"><span class="monogram"><span>R</span></span><span class="word"><b>MAISON ROYALE</b></span></a>
+      <button class="icon-btn" data-drawer-close aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="../index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="stores.html"><i class="fa-solid fa-store"></i> Stores</a></li>
+      <li><a href="fashion.html"><i class="fa-solid fa-shirt"></i> Fashion</a></li>
+      <li><a href="dining.html"><i class="fa-solid fa-utensils"></i> Dining</a></li>
+      <li><a href="entertainment.html"><i class="fa-solid fa-film"></i> Entertainment</a></li>
+      <li><a href="events.html"><i class="fa-solid fa-calendar"></i> Events</a></li>
+      <li><a href="offers.html"><i class="fa-solid fa-tag"></i> Offers</a></li>
+      <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+      <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="drawer-cta">
+      <a href="offers.html" class="btn btn-gold w-100 mb-2"><i class="fa-solid fa-tag"></i> Exclusive Offers</a>
+      <a href="../dashboard/index.html" class="btn btn-ghost w-100"><i class="fa-solid fa-sliders"></i> Management Portal</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ search overlay ============================ -->
+<div class="search-overlay" id="searchOverlay" aria-hidden="true">
+  <div class="so-backdrop" data-search-close></div>
+  <div class="so-panel" role="dialog" aria-modal="true" aria-label="Search the mall">
+    <div class="so-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input class="so-input" type="text" placeholder="Search stores, dining, events, offers…" aria-label="Search" autocomplete="off">
+      <button class="so-close" data-search-close aria-label="Close search"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="so-body"></div>
+    <div class="so-hint"><span><kbd>↵</kbd> open result</span><span><kbd>ESC</kbd> close search</span></div>
+  </div>
+</div>
+
+<main id="main">
+<!-- ================================ page hero ================================ -->
+<section class="page-hero">
+  <div class="ph-bg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/SC_Mall_atrium_view.jpg/1400px-SC_Mall_atrium_view.jpg" alt="" aria-hidden="true"></div>
+  <div class="ph-shade"></div>
+  <div class="container-lux">
+    <div class="ph-inner">
+      <div class="ph-crumb"><a href="../index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>Stores</span></div>
+      <h1>The Store <em>Directory</em></h1>
+      <p>Thirty boutiques, restaurants and experiences across six curated floors — search, filter and step inside.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-lux">
+    <div class="filter-bar">
+      <div class="search-field">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="storeSearch" placeholder="Search boutiques, categories, locations…" aria-label="Search stores" autocomplete="off">
+      </div>
+      <label for="storeSort" class="sr-only">Sort stores</label>
+      <select id="storeSort" aria-label="Sort stores">
+        <option value="name">Sort · Name</option>
+        <option value="floor">Sort · Floor</option>
+        <option value="rating">Sort · Rating</option>
+      </select>
+    </div>
+
+    <div class="pills-row" id="groupPills" role="group" aria-label="Filter by department">
+      <button class="pill active" data-group="All">All</button>
+      <button class="pill" data-group="Fashion">Fashion</button>
+      <button class="pill" data-group="Dining">Dining</button>
+      <button class="pill" data-group="Lifestyle">Lifestyle</button>
+      <button class="pill" data-group="Entertainment">Entertainment</button>
+    </div>
+    <div class="pills-row" id="floorPills" role="group" aria-label="Filter by floor">
+      <button class="pill active" data-floor="All">All Floors</button>
+      <button class="pill" data-floor="G">Ground</button>
+      <button class="pill" data-floor="M">Mezzanine</button>
+      <button class="pill" data-floor="1">Level 1</button>
+      <button class="pill" data-floor="2">Level 2</button>
+      <button class="pill" data-floor="3">Level 3</button>
+    </div>
+
+    <div class="result-count" id="storeCount"><b>30</b> boutiques</div>
+    <div class="row g-4" id="storeGrid"></div>
+    <div class="pagination-lux" id="storePager" style="justify-content:center;border:0;margin-top:26px"></div>
+  </div>
+</section>
+</main>
+
+<!-- ================================ footer ================================ -->
+<footer class="site-footer">
+  <div class="container-lux">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="../index.html"><span class="monogram"><span>R</span></span><span class="word"><b>MAISON ROYALE</b><small>PARIS</small></span></a>
+        <p>One Royale Avenue, Goldcrest Quarter — the world's ultimate destination for luxury shopping, dining, entertainment and lifestyle.</p>
+        <div class="social-row">
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Mall</h5>
+        <ul class="foot-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="stores.html">Stores</a></li>
+          <li><a href="stores.html">Directory</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="offers.html">Offers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul class="foot-links">
+          <li><a href="contact.html">Concierge</a></li>
+          <li><a href="about.html#services">Parking</a></li>
+          <li><a href="about.html#services">Accessibility</a></li>
+          <li><a href="offers.html">Gift Cards</a></li>
+          <li><a href="contact.html">Customer Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Information</h5>
+        <ul class="foot-links">
+          <li><a href="contact.html">Opening Hours</a></li>
+          <li><a href="contact.html">Location</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#policies">Privacy Policy</a></li>
+          <li><a href="about.html#policies">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="footer-year">2026</span> Maison Royale. All rights reserved.</p>
+      <div class="foot-mini">
+        <a href="about.html#policies">Privacy</a>
+        <a href="about.html#policies">Terms</a>
+        <a href="../dashboard/index.html">Management Portal</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================= store modal ============================= -->
+<div class="modal fade modal-lux" id="storeModal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Store details">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/img-map.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/stores.js"></script>
+</body>
+</html>
