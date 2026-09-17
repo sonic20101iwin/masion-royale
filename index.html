@@ -1,567 +1,1129 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Maison Royale — Where Luxury Meets Lifestyle</title>
-<meta name="description" content="Six floors of the world's finest fashion, dining, entertainment and experiences — under one extraordinary destination.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect x='6' y='6' width='20' height='20' rx='2' transform='rotate(45 16 16)' fill='none' stroke='%23c8a24a' stroke-width='1.5'/%3E%3Ctext x='16' y='19' font-size='11' font-family='Georgia' text-anchor='middle' fill='%23c8a24a'%3ER%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.pexels.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
-</head>
-<body data-page="home">
-
-<!-- ============================== top bar ============================== -->
-<div class="topbar">
-  <div class="container-lux">
-    <div class="tb-left">
-      <span class="topbar-phone"><i class="fa-solid fa-phone"></i> +33 1 42 60 00 00</span>
-      <span class="tb-sep"></span>
-      <span class="topbar-hours"><i class="fa-solid fa-clock"></i> Mon–Sat 10:00 – 22:00 · Sun 11:00 – 20:00</span>
-    </div>
-    <div class="tb-right">
-      <a href="pages/about.html"><i class="fa-solid fa-crown"></i> The Royale Circle</a>
-      <span class="tb-sep"></span>
-      <a href="dashboard/index.html"><i class="fa-solid fa-sliders"></i> Management Portal</a>
-    </div>
-  </div>
-</div>
-
-<!-- ============================== navbar ============================== -->
-<header class="navbar-lux" id="siteNav">
-  <div class="container-lux">
-    <div class="nav-inner">
-      <a class="nav-logo" href="index.html" aria-label="Maison Royale — Home">
-        <span class="monogram"><span>R</span></span>
-        <span class="word"><b>MAISON ROYALE</b><small>PARIS</small></span>
-      </a>
-      <nav aria-label="Primary">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="pages/stores.html">Stores</a></li>
-          <li><a href="pages/fashion.html">Fashion</a></li>
-          <li><a href="pages/dining.html">Dining</a></li>
-          <li><a href="pages/entertainment.html">Entertainment</a></li>
-          <li><a href="pages/events.html">Events</a></li>
-          <li><a href="pages/offers.html">Offers</a></li>
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-actions">
-        <button class="icon-btn" data-search-open aria-label="Search the mall"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <a class="icon-btn has-dot" href="pages/offers.html" aria-label="Exclusive offers"><i class="fa-solid fa-bag-shopping"></i><span class="dot"></span></a>
-        <a class="btn btn-gold btn-sm admin-pill" href="dashboard/index.html"><i class="fa-solid fa-sliders"></i> Manager</a>
-        <button class="icon-btn nav-toggle" data-drawer-open aria-label="Open menu" aria-controls="mobileDrawer"><i class="fa-solid fa-bars"></i></button>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- ============================ mobile drawer ============================ -->
-<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu">
-  <div class="drawer-backdrop" data-drawer-close></div>
-  <div class="drawer-panel">
-    <div class="drawer-head">
-      <a class="nav-logo" href="index.html"><span class="monogram"><span>R</span></span><span class="word"><b>MAISON ROYALE</b></span></a>
-      <button class="icon-btn" data-drawer-close aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <ul class="drawer-links">
-      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-      <li><a href="pages/stores.html"><i class="fa-solid fa-store"></i> Stores</a></li>
-      <li><a href="pages/fashion.html"><i class="fa-solid fa-shirt"></i> Fashion</a></li>
-      <li><a href="pages/dining.html"><i class="fa-solid fa-utensils"></i> Dining</a></li>
-      <li><a href="pages/entertainment.html"><i class="fa-solid fa-film"></i> Entertainment</a></li>
-      <li><a href="pages/events.html"><i class="fa-solid fa-calendar"></i> Events</a></li>
-      <li><a href="pages/offers.html"><i class="fa-solid fa-tag"></i> Offers</a></li>
-      <li><a href="pages/about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
-      <li><a href="pages/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
-    </ul>
-    <div class="drawer-cta">
-      <a href="pages/offers.html" class="btn btn-gold w-100 mb-2"><i class="fa-solid fa-tag"></i> Exclusive Offers</a>
-      <a href="dashboard/index.html" class="btn btn-ghost w-100"><i class="fa-solid fa-sliders"></i> Management Portal</a>
-    </div>
-  </div>
-</div>
-
-<!-- ============================ search overlay ============================ -->
-<div class="search-overlay" id="searchOverlay" aria-hidden="true">
-  <div class="so-backdrop" data-search-close></div>
-  <div class="so-panel" role="dialog" aria-modal="true" aria-label="Search the mall">
-    <div class="so-bar">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input class="so-input" type="text" placeholder="Search stores, dining, events, offers…" aria-label="Search" autocomplete="off">
-      <button class="so-close" data-search-close aria-label="Close search"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div class="so-body"></div>
-    <div class="so-hint"><span><kbd>↵</kbd> open result</span><span><kbd>ESC</kbd> close search</span></div>
-  </div>
-</div>
-
-<main id="main">
-<!-- ================================ hero ================================ -->
-<section class="hero" id="top">
-  <div class="hero-bg">
-    <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=1800&h=1150&fit=crop" alt="Editorial luxury fashion at Maison Royale" fetchpriority="high">
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="container-lux">
-    <div class="hero-inner">
-      <span class="hero-tag"><i class="fa-solid fa-gem"></i> One Royale Avenue · Paris</span>
-      <h1 class="hero-title">Where Luxury Meets <em>Lifestyle</em></h1>
-      <p class="hero-sub">Discover the world's finest fashion, dining, entertainment and experiences under one extraordinary destination.</p>
-      <div class="hero-cta">
-        <a href="pages/about.html" class="btn btn-gold btn-lg"><i class="fa-solid fa-compass"></i> Explore the Mall</a>
-        <a href="pages/stores.html" class="btn btn-ghost btn-lg"><i class="fa-solid fa-store"></i> Discover Stores</a>
-      </div>
-      <div class="hero-meta">
-        <div class="metric"><b><span data-count="30">0</span></b><span>Maisons &amp; Ateliers</span></div>
-        <div class="metric"><b><span data-count="12">0</span></b><span>Signature Tables</span></div>
-        <div class="metric"><b><span data-count="6">0</span></b><span>Curated Floors</span></div>
-        <div class="metric"><b><span data-count="14">0</span></b><span>Years of Prestige</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-float float-1"><i class="fa-solid fa-car-side"></i> Private Valet · Level B1</div>
-  <div class="hero-float float-2"><i class="fa-solid fa-champagne-glasses"></i> VIP Lounge — Open till late</div>
-  <a href="#explore" class="scroll-indicator" aria-label="Scroll to featured brands">Scroll<span class="line"></span></a>
-</section>
-
-<!-- ============================ brand marquee ============================ -->
-<section class="marquee-band" aria-label="Featured houses">
-  <div class="marquee" id="brandMarquee">
-    <span>Maison Élégance</span><span>Aurelia</span><span>Noir Atelier</span><span>Milano House</span><span>Élan</span><span>Prestige</span><span>Velvet &amp; Co.</span><span>Crown Fashion</span><span>Chrono Paris</span><span>Aurea Gioielli</span>
-  </div>
-</section>
-
-<!-- ============================= featured brands ============================= -->
-<section class="section" id="explore">
-  <div class="container-lux">
-    <div class="sec-head row-split">
-      <div>
-        <div class="overline">The Maison</div>
-        <h2 class="display-2">Featured <em>Houses</em></h2>
-        <p class="lead">Eight celebrated maisons, each reimagining what a luxury boutique can be.</p>
-      </div>
-      <a href="pages/stores.html" class="btn btn-ghost">Full Directory <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="brand-grid" id="homeBrands"></div>
-  </div>
-</section>
-
-<!-- ============================= fashion section ============================= -->
-<section class="section" id="fashion">
-  <div class="container-lux">
-    <div class="sec-head row-split">
-      <div>
-        <div class="overline">Curated By Our Buyers</div>
-        <h2 class="display-2">The <em>World</em> of Fashion</h2>
-        <p class="lead">Seven worlds of the maison — from runway couture to the quiet details.</p>
-      </div>
-      <a href="pages/fashion.html" class="btn btn-ghost">Enter Fashion <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="cat-grid">
-      <a class="cat-card" href="pages/fashion.html?cat=Womenswear">
-        <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop" alt="Women's fashion" loading="lazy">
-        <div class="cat-shade"></div>
-        <div class="cat-line"><span class="badge badge-glass">Level 1–3</span></div>
-        <div class="cat-body"><i class="fa-solid fa-vest cat-icon"></i><h3>Women's Fashion</h3><span>12 maisons</span></div>
-      </a>
-      <a class="cat-card" href="pages/fashion.html?cat=Menswear">
-        <img src="https://images.pexels.com/photos/1464367/pexels-photo-1464367.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop" alt="Men's fashion" loading="lazy">
-        <div class="cat-shade"></div>
-        <div class="cat-line"><span class="badge badge-glass">Level G–1</span></div>
-        <div class="cat-body"><i class="fa-solid fa-user-tie cat-icon"></i><h3>Men's Fashion</h3><span>8 maisons</span></div>
-      </a>
-      <a class="cat-card" href="pages/fashion.html?cat=Shoes">
-        <img src="https://images.pexels.com/photos/12210270/pexels-photo-12210270.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop" alt="Designer shoes" loading="lazy">
-        <div class="cat-shade"></div>
-        <div class="cat-line"><span class="badge badge-glass">Ground</span></div>
-        <div class="cat-body"><i class="fa-solid fa-shoe-prints cat-icon"></i><h3>Shoes</h3><span>Hand-finish ateliers</span></div>
-      </a>
-      <a class="cat-card" href="pages/fashion.html?cat=Bags">
-        <img src="https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop" alt="Designer handbags" loading="lazy">
-        <div class="cat-shade"></div>
-        <div class="cat-line"><span class="badge badge-glass">Level 1</span></div>
-        <div class="cat-body"><i class="fa-solid fa-bag-shopping cat-icon"></i><h3>Bags</h3><span>Bespoke trunks &amp; totes</span></div>
-      </a>
-      <a class="cat-card" href="pages/fashion.html?cat=Watches">
-        <img src="https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop" alt="Luxury watches" loading="lazy">
-        <div class="cat-shade"></div>
-        <div class="cat-line"><span class="badge badge-glass">Level 1</span></div>
-        <div class="cat-body"><i class="fa-regular fa-clock cat-icon"></i><h3>Watches</h3><span>Haute horlogerie</span></div>
-      </a>
-      <a class="cat-card" href="pages/fashion.html?cat=Jewelry">
-        <img src="https://images.pexels.com/photos/935743/pexels-photo-935743.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop" alt="Fine jewelry" loading="lazy">
-        <div class="cat-shade"></div>
-        <div class="cat-line"><span class="badge badge-glass">Level 2</span></div>
-        <div class="cat-body"><i class="fa-solid fa-gem cat-icon"></i><h3>Jewelry</h3><span>Single-atelier pieces</span></div>
-      </a>
-      <a class="cat-card" href="pages/fashion.html?cat=Accessories">
-        <img src="https://images.pexels.com/photos/210474/pexels-photo-210474.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop" alt="Fashion accessories" loading="lazy">
-        <div class="cat-shade"></div>
-        <div class="cat-line"><span class="badge badge-glass">Mezzanine</span></div>
-        <div class="cat-body"><i class="fa-solid fa-glasses cat-icon"></i><h3>Accessories</h3><span>Eyewear &amp; objet</span></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ========================== designer clothes ========================== -->
-<section class="section" id="designer">
-  <div class="container-lux">
-    <div class="sec-head row-split">
-      <div>
-        <div class="overline">Editor's Selection</div>
-        <h2 class="display-2">Designer <em>Collections</em></h2>
-        <p class="lead">Evening wear, tailored separates and hand-finished pieces — presented as an editorial, never a catalogue.</p>
-      </div>
-      <a href="pages/fashion.html" class="btn btn-gold">View All Pieces <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="prod-grid" id="homeProducts"></div>
-  </div>
-</section>
-
-<!-- ============================ designer shoes ============================ -->
-<section class="section section-alt" id="shoes">
-  <div class="container-lux">
-    <div class="sec-head row-split">
-      <div>
-        <div class="overline">Icons Of Craft</div>
-        <h2 class="display-2">The <em>Shoe</em> Salons</h2>
-        <p class="lead">Designer sneakers, sculptural heels and full-length boots — lasts cut in Florence and finished at Royale.</p>
-      </div>
-      <a href="pages/fashion.html?cat=Shoes" class="btn btn-ghost">All Footwear <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="prod-grid" id="homeShoes"></div>
-  </div>
-</section>
-
-<!-- ============================== dining ============================== -->
-<section class="section" id="dining">
-  <div class="container-lux">
-    <div class="sec-head row-split">
-      <div>
-        <div class="overline">Gastronomy</div>
-        <h2 class="display-2">Dining at the <em>Palace</em></h2>
-        <p class="lead">Two Michelin stars, a tea atelier, a rooftop tasting room — twelve tables across six floors.</p>
-      </div>
-      <a href="pages/dining.html" class="btn btn-ghost">The Restaurants <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="row g-4" id="homeDining"></div>
-  </div>
-</section>
-
-<!-- =========================== entertainment =========================== -->
-<section class="section section-alt" id="entertainment">
-  <div class="container-lux">
-    <div class="split">
-      <div class="split-media">
-        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/4DX_seats_in_cinema_%28motion_and_environmental_effects_synced_with_the_on-screen_action%29_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg%2C_Norway_2023_IMG_7852.jpg/1400px-4DX_seats_in_cinema_%28motion_and_environmental_effects_synced_with_the_on-screen_action%29_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg%2C_Norway_2023_IMG_7852.jpg" alt="The Royale Cinemas — velvet auditorium" loading="lazy">
-      </div>
-      <div class="split-body">
-        <div class="overline">Beyond Retail</div>
-        <h2 class="display-2">Entertainment, <em>Perfected</em></h2>
-        <p class="lead">Seven auditoriums of velvet and Dolby Atmos, a kinetic live stage, VR suites and rooftop terraces.</p>
-        <ul class="feat-list">
-          <li><i class="fa-solid fa-film"></i><div><b>The Royale Cinemas</b><span>IMAX &amp; champagne foyer — Level 2</span></div></li>
-          <li><i class="fa-solid fa-gamepad"></i><div><b>Aether Arcade</b><span>Simulators, esports &amp; VR — Level 2</span></div></li>
-          <li><i class="fa-solid fa-music"></i><div><b>The Sunburst Stage</b><span>Live music &amp; fashion shows — Ground</span></div></li>
-          <li><i class="fa-solid fa-champagne-glasses"></i><div><b>Le Dôme Experiences</b><span>Private tastings — Level 3</span></div></li>
-        </ul>
-        <a href="pages/entertainment.html" class="btn btn-gold">Explore Entertainment <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== events ============================== -->
-<section class="section" id="events">
-  <div class="container-lux">
-    <div class="sec-head row-split">
-      <div>
-        <div class="overline">The Calendar</div>
-        <h2 class="display-2">Moments Worth <em>Dressing For</em></h2>
-        <p class="lead">Fashion presentations, night shopping and private tastings — intimate by design, unforgettable by nature.</p>
-      </div>
-      <a href="pages/events.html" class="btn btn-ghost">All Events <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="row g-4" id="homeEvents"></div>
-  </div>
-</section>
-
-<!-- ============================== offers ============================== -->
-<section class="section section-alt" id="offers">
-  <div class="container-lux">
-    <div class="sec-head row-split">
-      <div>
-        <div class="overline">Privileges</div>
-        <h2 class="display-2">Exclusive <em>Offers</em></h2>
-        <p class="lead">Limited-season privileges for members and guests — claim them at the boutique with your Royale Card.</p>
-      </div>
-      <a href="pages/offers.html" class="btn btn-gold">All Offers <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="row g-4" id="homeOffers"></div>
-  </div>
-</section>
-
-<!-- ============================== VIP band ============================== -->
-<section class="vip-band" id="vip">
-  <div class="vip-bg" style="background-image:url('https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Entrance_lobby_of_Amantaka_luxury_Resort_%26_Hotel_at_blue_hour_in_Luang_Prabang_Laos.jpg/1400px-Entrance_lobby_of_Amantaka_luxury_Resort_%26_Hotel_at_blue_hour_in_Luang_Prabang_Laos.jpg')"></div>
-  <div class="vip-shade"></div>
-  <div class="container-lux">
-    <div class="vip-inner">
-      <div class="overline">The Royale Circle</div>
-      <h2>An Address Beyond <em>First Class</em></h2>
-      <p class="lead" style="color:rgba(246,239,227,.78)">Membership to the Royale Circle is by invitation. Personal shoppers, private lounges and the maison's quietest secrets — reserved for a few.</p>
-      <ul class="vip-list">
-        <li><i class="fa-solid fa-user-tie"></i> Private personal shopping</li>
-        <li><i class="fa-solid fa-martini-glass-citrus"></i> VIP member lounges</li>
-        <li><i class="fa-solid fa-car-side"></i> Valet &amp; chauffeur service</li>
-        <li><i class="fa-solid fa-bell-concierge"></i> Dedicated concierge desk</li>
-        <li><i class="fa-solid fa-table-top"></i> Private events &amp; previews</li>
-        <li><i class="fa-solid fa-champagne-glasses"></i> Members-only dining rooms</li>
-      </ul>
-      <a href="pages/about.html#vip" class="btn btn-gold btn-lg">Discover the VIP Experience <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-  </div>
-  <div class="vip-stamp"><b>MR</b><span>Members Only</span></div>
-</section>
-
-<!-- ============================ architecture ============================ -->
-<section class="section" id="architecture">
-  <div class="container-lux">
-    <div class="sec-head">
-      <div class="overline">The Architecture</div>
-      <h2 class="display-2">A Temple Of <em>Retail</em></h2>
-      <p class="lead">Seven storeys of glass, marble and bronze — designed by Atelier Lumi and crowned with a 96-metre atrium.</p>
-    </div>
-    <div class="arch-grid">
-      <div class="arch-item arch-a">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/SC_Mall_atrium_view.jpg/1400px-SC_Mall_atrium_view.jpg" alt="The Grand Atrium at Maison Royale" loading="lazy">
-        <div class="arch-shade"></div>
-        <div class="arch-body"><span class="arch-no">01</span><h3>The Grand Atrium</h3><p>A 96-metre glass cupola above a travertine piazza.</p></div>
-      </div>
-      <div class="arch-item arch-b">
-        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/HK_KCD_%E5%95%9F%E5%BE%B7_Kai_Tak_AIRSIDE_Shopping_Mall_void_escalators_July_2024_R12S_01.jpg/1400px-HK_KCD_%E5%95%9F%E5%BE%B7_Kai_Tak_AIRSIDE_Shopping_Mall_void_escalators_July_2024_R12S_01.jpg" alt="Sculptural escalators" loading="lazy">
-        <div class="arch-shade"></div>
-        <div class="arch-body"><span class="arch-no">02</span><h3>Vertical Gardens</h3><p>Sculptural escalators wrapped in living green.</p></div>
-      </div>
-      <div class="arch-item arch-c">
-        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/DZ6_0939_A_modern_hotel_building_lit_up_at_night_its_triangular_fa%C3%A7ade_and_rows_of_balconies_glowing_against_the_dark_sky.jpg/1400px-DZ6_0939_A_modern_hotel_building_lit_up_at_night_its_triangular_fa%C3%A7ade_and_rows_of_balconies_glowing_against_the_dark_sky.jpg" alt="The night façade of Maison Royale" loading="lazy">
-        <div class="arch-shade"></div>
-        <div class="arch-body"><span class="arch-no">03</span><h3>The Night Façade</h3><p>Triangular glazing that glows across the Goldcrest Quarter.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ customer experience ============================ -->
-<section class="section section-alt" id="services">
-  <div class="container-lux">
-    <div class="sec-head">
-      <div class="overline">Guest Services</div>
-      <h2 class="display-2">The Maison <em>Anticipates</em></h2>
-      <p class="lead">Every comfort is considered — from arrival by valet to the quiet details on every floor.</p>
-    </div>
-    <div class="svc-grid" id="homeServices"></div>
-  </div>
-</section>
-
-<!-- ============================== newsletter ============================== -->
-<section class="section" id="newsletter">
-  <div class="container-lux">
-    <div class="newsletter">
-      <div>
-        <div class="overline" style="color:var(--gold-2)">The Royale Letter</div>
-        <h2>Stay Ahead of Luxury</h2>
-        <p>Be the first to discover exclusive events, new stores, private experiences, and special offers.</p>
-      </div>
-      <form class="news-form" data-newsletter novalidate>
-        <div class="form-field">
-          <i class="fa-solid fa-envelope" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--gold)"></i>
-          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maison Royale — Where Luxury Meets Lifestyle</title>
+    <meta
+      name="description"
+      content="Six floors of the world's finest fashion, dining, entertainment and experiences — under one extraordinary destination."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect x='6' y='6' width='20' height='20' rx='2' transform='rotate(45 16 16)' fill='none' stroke='%23c8a24a' stroke-width='1.5'/%3E%3Ctext x='16' y='19' font-size='11' font-family='Georgia' text-anchor='middle' fill='%23c8a24a'%3ER%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.pexels.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body data-page="home">
+    <!-- ============================== top bar ============================== -->
+    <div class="topbar">
+      <div class="container-lux">
+        <div class="tb-left">
+          <span class="topbar-phone"
+            ><i class="fa-solid fa-phone"></i> +33 1 42 60 00 00</span
+          >
+          <span class="tb-sep"></span>
+          <span class="topbar-hours"
+            ><i class="fa-solid fa-clock"></i> Mon–Sat 10:00 – 22:00 · Sun 11:00
+            – 20:00</span
+          >
         </div>
-        <button class="btn btn-gold" type="submit">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
-      </form>
-    </div>
-  </div>
-</section>
-</main>
-
-<!-- ================================ footer ================================ -->
-<footer class="site-footer">
-  <div class="container-lux">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="nav-logo" href="index.html"><span class="monogram"><span>R</span></span><span class="word"><b>MAISON ROYALE</b><small>PARIS</small></span></a>
-        <p>One Royale Avenue, Goldcrest Quarter — the world's ultimate destination for luxury shopping, dining, entertainment and lifestyle.</p>
-        <div class="social-row">
-          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <div class="tb-right">
+          <a href="pages/about.html"
+            ><i class="fa-solid fa-crown"></i> The Royale Circle</a
+          >
+          <span class="tb-sep"></span>
+          <a href="dashboard/index.html"
+            ><i class="fa-solid fa-sliders"></i> Management Portal</a
+          >
         </div>
       </div>
-      <div>
-        <h5>Mall</h5>
-        <ul class="foot-links">
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/stores.html">Stores</a></li>
-          <li><a href="pages/stores.html">Directory</a></li>
-          <li><a href="pages/events.html">Events</a></li>
-          <li><a href="pages/offers.html">Offers</a></li>
-        </ul>
+    </div>
+
+    <!-- ============================== navbar ============================== -->
+    <header class="navbar-lux" id="siteNav">
+      <div class="container-lux">
+        <div class="nav-inner">
+          <a
+            class="nav-logo"
+            href="index.html"
+            aria-label="Maison Royale — Home"
+          >
+            <span class="monogram"><span>R</span></span>
+            <span class="word"><b>MAISON ROYALE</b><small>PARIS</small></span>
+          </a>
+          <nav aria-label="Primary">
+            <ul class="nav-menu">
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="pages/stores.html">Stores</a></li>
+              <li><a href="pages/fashion.html">Fashion</a></li>
+              <li><a href="pages/dining.html">Dining</a></li>
+              <li><a href="pages/entertainment.html">Entertainment</a></li>
+              <li><a href="pages/events.html">Events</a></li>
+              <li><a href="pages/offers.html">Offers</a></li>
+              <li><a href="pages/about.html">About</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="nav-actions">
+            <button
+              class="icon-btn"
+              data-search-open
+              aria-label="Search the mall"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <a
+              class="icon-btn has-dot"
+              href="pages/offers.html"
+              aria-label="Exclusive offers"
+              ><i class="fa-solid fa-bag-shopping"></i><span class="dot"></span
+            ></a>
+            <a
+              class="btn btn-gold btn-sm admin-pill"
+              href="dashboard/index.html"
+              ><i class="fa-solid fa-sliders"></i> Manager</a
+            >
+            <button
+              class="icon-btn nav-toggle"
+              data-drawer-open
+              aria-label="Open menu"
+              aria-controls="mobileDrawer"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
       </div>
-      <div>
-        <h5>Services</h5>
-        <ul class="foot-links">
-          <li><a href="pages/contact.html">Concierge</a></li>
-          <li><a href="pages/about.html#services">Parking</a></li>
-          <li><a href="pages/about.html#services">Accessibility</a></li>
-          <li><a href="pages/offers.html">Gift Cards</a></li>
-          <li><a href="pages/contact.html">Customer Service</a></li>
+    </header>
+
+    <!-- ============================ mobile drawer ============================ -->
+    <div
+      class="mobile-drawer"
+      id="mobileDrawer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menu"
+    >
+      <div class="drawer-backdrop" data-drawer-close></div>
+      <div class="drawer-panel">
+        <div class="drawer-head">
+          <a class="nav-logo" href="index.html"
+            ><span class="monogram"><span>R</span></span
+            ><span class="word"><b>MAISON ROYALE</b></span></a
+          >
+          <button class="icon-btn" data-drawer-close aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <ul class="drawer-links">
+          <li>
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          </li>
+          <li>
+            <a href="pages/stores.html"
+              ><i class="fa-solid fa-store"></i> Stores</a
+            >
+          </li>
+          <li>
+            <a href="pages/fashion.html"
+              ><i class="fa-solid fa-shirt"></i> Fashion</a
+            >
+          </li>
+          <li>
+            <a href="pages/dining.html"
+              ><i class="fa-solid fa-utensils"></i> Dining</a
+            >
+          </li>
+          <li>
+            <a href="pages/entertainment.html"
+              ><i class="fa-solid fa-film"></i> Entertainment</a
+            >
+          </li>
+          <li>
+            <a href="pages/events.html"
+              ><i class="fa-solid fa-calendar"></i> Events</a
+            >
+          </li>
+          <li>
+            <a href="pages/offers.html"
+              ><i class="fa-solid fa-tag"></i> Offers</a
+            >
+          </li>
         </ul>
-      </div>
-      <div>
-        <h5>Information</h5>
-        <ul class="foot-links">
-          <li><a href="pages/contact.html">Opening Hours</a></li>
-          <li><a href="pages/contact.html">Location</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
-          <li><a href="pages/about.html#policies">Privacy Policy</a></li>
-          <li><a href="pages/about.html#policies">Terms</a></li>
-        </ul>
+        <div class="drawer-cta">
+          <a href="pages/offers.html" class="btn btn-gold w-100 mb-2"
+            ><i class="fa-solid fa-tag"></i> Exclusive Offers</a
+          >
+          <a href="dashboard/index.html" class="btn btn-ghost w-100"
+            ><i class="fa-solid fa-sliders"></i> Management Portal</a
+          >
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© <span class="footer-year">2026</span> Maison Royale. All rights reserved.</p>
-      <div class="foot-mini">
-        <a href="pages/about.html#policies">Privacy</a>
-        <a href="pages/about.html#policies">Terms</a>
-        <a href="dashboard/index.html">Management Portal</a>
+
+    <!-- ============================ search overlay ============================ -->
+    <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+      <div class="so-backdrop" data-search-close></div>
+      <div
+        class="so-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Search the mall"
+      >
+        <div class="so-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            class="so-input"
+            type="text"
+            placeholder="Search stores, dining, events, offers…"
+            aria-label="Search"
+            autocomplete="off"
+          />
+          <button class="so-close" data-search-close aria-label="Close search">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="so-body"></div>
+        <div class="so-hint">
+          <span><kbd>↵</kbd> open result</span
+          ><span><kbd>ESC</kbd> close search</span>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/img-map.js"></script>
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
-<script>
-(function () {
-  'use strict';
-  var D = window.MallData;
-  var IMG = window.MR_IMG || {};
-  if (!D) return;
-  function img(k) { return D.IMG[k] || IMG[k] || ''; }
-  function e(v) { return D.esc(v); }
-  function price(r) {
-    return D.money(r.price) + (r.old ? ' <small>' + D.money(r.old) + '</small>' : '');
-  }
-  function moneyIcon(v) { return '€'.repeat(Math.max(1, Math.min(4, v))); }
+    <main id="main">
+      <!-- ================================ hero ================================ -->
+      <section class="hero" id="top">
+        <div class="hero-bg">
+          <img
+            src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=1800&h=1150&fit=crop"
+            alt="Editorial luxury fashion at Maison Royale"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container-lux">
+          <div class="hero-inner">
+            <span class="hero-tag"
+              ><i class="fa-solid fa-gem"></i> One Royale Avenue · Paris</span
+            >
+            <h1 class="hero-title">Where Luxury Meets <em>Lifestyle</em></h1>
+            <p class="hero-sub">
+              Discover the world's finest fashion, dining, entertainment and
+              experiences under one extraordinary destination.
+            </p>
+            <div class="hero-cta">
+              <a href="pages/about.html" class="btn btn-gold btn-lg"
+                ><i class="fa-solid fa-compass"></i> Explore the Mall</a
+              >
+              <a href="pages/stores.html" class="btn btn-ghost btn-lg"
+                ><i class="fa-solid fa-store"></i> Discover Stores</a
+              >
+            </div>
+            <div class="hero-meta">
+              <div class="metric">
+                <b><span data-count="30">0</span></b
+                ><span>Maisons &amp; Ateliers</span>
+              </div>
+              <div class="metric">
+                <b><span data-count="12">0</span></b
+                ><span>Signature Tables</span>
+              </div>
+              <div class="metric">
+                <b><span data-count="6">0</span></b
+                ><span>Curated Floors</span>
+              </div>
+              <div class="metric">
+                <b><span data-count="14">0</span></b
+                ><span>Years of Prestige</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-float float-1">
+          <i class="fa-solid fa-car-side"></i> Private Valet · Level B1
+        </div>
+        <div class="hero-float float-2">
+          <i class="fa-solid fa-champagne-glasses"></i> VIP Lounge — Open till
+          late
+        </div>
+        <a
+          href="#explore"
+          class="scroll-indicator"
+          aria-label="Scroll to featured brands"
+          >Scroll<span class="line"></span
+        ></a>
+      </section>
 
-  var brands = document.getElementById('homeBrands');
-  if (brands) {
-    brands.innerHTML = D.BRANDS.map(function (b) {
-      return '<article class="card-lux brand-card reveal">' +
-        '<div class="b-mono">' + e(b.mono) + '</div>' +
-        '<h3>' + e(b.name) + '</h3><span class="b-cat">' + e(b.cat) + '</span>' +
-        '<p>' + e(b.blurb) + '</p>' +
-        '<div class="b-floor"><span><i class="fa-solid fa-layer-group"></i> ' + (D.SITE.floorNames[b.floor] || 'Level ' + b.floor) + '</span></div>' +
-        '<a href="pages/stores.html?q=' + encodeURIComponent(b.name) + '" class="btn btn-ghost btn-sm mt-3"><i class="fa-solid fa-arrow-right"></i> View Store</a>' +
-        '</article>';
-    }).join('');
-  }
+      <!-- ============================ brand marquee ============================ -->
+      <section class="marquee-band" aria-label="Featured houses">
+        <div class="marquee" id="brandMarquee">
+          <span>Maison Élégance</span><span>Aurelia</span
+          ><span>Noir Atelier</span><span>Milano House</span><span>Élan</span
+          ><span>Prestige</span><span>Velvet &amp; Co.</span
+          ><span>Crown Fashion</span><span>Chrono Paris</span
+          ><span>Aurea Gioielli</span>
+        </div>
+      </section>
 
-  function prodCard(r) {
-    return '<article class="card-lux prod-card reveal">' +
-      '<div class="media" style="aspect-ratio:4/5"><img src="' + img(r.img) + '" alt="' + e(r.name) + '" loading="lazy">' +
-      (r.status === 'limited' ? '<div class="prod-save"><span class="badge badge-gold">Limited</span></div>' : '') +
-      '<div class="prod-view"><a class="btn btn-gold btn-sm" href="pages/fashion.html?p=' + r.id + '"><i class="fa-solid fa-eye"></i> View Details</a></div>' +
-      '</div>' +
-      '<div class="prod-body">' +
-      '<span class="prod-brand">' + e(r.brand) + '</span>' +
-      '<h3>' + e(r.name) + '</h3>' +
-      '<span class="prod-cat">' + e(r.cat) + '</span>' +
-      '<div class="prod-foot"><span class="prod-price">' + price(r) + '</span></div>' +
-      '</div></article>';
-  }
+      <!-- ============================= featured brands ============================= -->
+      <section class="section" id="explore">
+        <div class="container-lux">
+          <div class="sec-head row-split">
+            <div>
+              <div class="overline">The Maison</div>
+              <h2 class="display-2">Featured <em>Houses</em></h2>
+              <p class="lead">
+                Eight celebrated maisons, each reimagining what a luxury
+                boutique can be.
+              </p>
+            </div>
+            <a href="pages/stores.html" class="btn btn-ghost"
+              >Full Directory <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="brand-grid" id="homeBrands"></div>
+        </div>
+      </section>
 
-  var products = document.getElementById('homeProducts');
-  if (products) products.innerHTML = D.products().filter(function (p) { return p.status !== 'unavailable'; }).slice(0, 8).map(prodCard).join('');
-  var shoes = document.getElementById('homeShoes');
-  if (shoes) {
-    shoes.innerHTML = D.products().filter(function (p) {
-      return ['Formal Shoes', 'Loafers', 'Heels', 'Sneakers', 'Boots', 'Sandals'].indexOf(p.cat) !== -1;
-    }).slice(0, 6).map(prodCard).join('');
-  }
-var dining = document.getElementById('homeDining');
-  if (dining) {
-    dining.innerHTML = D.restaurants().slice(0, 4).map(function (r) {
-      return '<div class="col-md-6 col-xl-3"><article class="card-lux rest-card reveal">' +
-        '<div class="media" style="aspect-ratio:16/10"><img src="' + img(r.img) + '" alt="' + e(r.name) + '" loading="lazy"></div>' +
-        '<div class="rest-body">' +
-        '<div class="rest-head"><div><span class="rest-cuisine">' + e(r.cuisine) + '</span><h3>' + e(r.name) + '</h3></div>' +
-        '<span class="rest-price">' + moneyIcon(r.price) + '</span></div>' +
-        '<p>' + e(r.desc) + '</p>' +
-        '<div class="rest-meta"><span><i class="fa-solid fa-clock"></i>' + e(r.hours) + '</span><span><i class="fa-solid fa-layer-group"></i> Level ' + e(r.floor) + '</span></div>' +
-        '<div class="rest-foot"><a class="btn btn-gold btn-sm" href="pages/dining.html?r=' + r.id + '"><i class="fa-solid fa-utensils"></i> View Restaurant</a></div>' +
-        '</div></article></div>';
-    }).join('');
-  }
+      <!-- ============================= fashion section ============================= -->
+      <section class="section" id="fashion">
+        <div class="container-lux">
+          <div class="sec-head row-split">
+            <div>
+              <div class="overline">Curated By Our Buyers</div>
+              <h2 class="display-2">The <em>World</em> of Fashion</h2>
+              <p class="lead">
+                Seven worlds of the maison — from runway couture to the quiet
+                details.
+              </p>
+            </div>
+            <a href="pages/fashion.html" class="btn btn-ghost"
+              >Enter Fashion <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="cat-grid">
+            <a class="cat-card" href="pages/fashion.html?cat=Womenswear">
+              <img
+                src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop"
+                alt="Women's fashion"
+                loading="lazy"
+              />
+              <div class="cat-shade"></div>
+              <div class="cat-line">
+                <span class="badge badge-glass">Level 1–3</span>
+              </div>
+              <div class="cat-body">
+                <i class="fa-solid fa-vest cat-icon"></i>
+                <h3>Women's Fashion</h3>
+                <span>12 maisons</span>
+              </div>
+            </a>
+            <a class="cat-card" href="pages/fashion.html?cat=Menswear">
+              <img
+                src="https://images.pexels.com/photos/1464367/pexels-photo-1464367.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop"
+                alt="Men's fashion"
+                loading="lazy"
+              />
+              <div class="cat-shade"></div>
+              <div class="cat-line">
+                <span class="badge badge-glass">Level G–1</span>
+              </div>
+              <div class="cat-body">
+                <i class="fa-solid fa-user-tie cat-icon"></i>
+                <h3>Men's Fashion</h3>
+                <span>8 maisons</span>
+              </div>
+            </a>
+            <a class="cat-card" href="pages/fashion.html?cat=Shoes">
+              <img
+                src="https://images.pexels.com/photos/12210270/pexels-photo-12210270.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop"
+                alt="Designer shoes"
+                loading="lazy"
+              />
+              <div class="cat-shade"></div>
+              <div class="cat-line">
+                <span class="badge badge-glass">Ground</span>
+              </div>
+              <div class="cat-body">
+                <i class="fa-solid fa-shoe-prints cat-icon"></i>
+                <h3>Shoes</h3>
+                <span>Hand-finish ateliers</span>
+              </div>
+            </a>
+            <a class="cat-card" href="pages/fashion.html?cat=Bags">
+              <img
+                src="https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop"
+                alt="Designer handbags"
+                loading="lazy"
+              />
+              <div class="cat-shade"></div>
+              <div class="cat-line">
+                <span class="badge badge-glass">Level 1</span>
+              </div>
+              <div class="cat-body">
+                <i class="fa-solid fa-bag-shopping cat-icon"></i>
+                <h3>Bags</h3>
+                <span>Bespoke trunks &amp; totes</span>
+              </div>
+            </a>
+            <a class="cat-card" href="pages/fashion.html?cat=Watches">
+              <img
+                src="https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop"
+                alt="Luxury watches"
+                loading="lazy"
+              />
+              <div class="cat-shade"></div>
+              <div class="cat-line">
+                <span class="badge badge-glass">Level 1</span>
+              </div>
+              <div class="cat-body">
+                <i class="fa-regular fa-clock cat-icon"></i>
+                <h3>Watches</h3>
+                <span>Haute horlogerie</span>
+              </div>
+            </a>
+            <a class="cat-card" href="pages/fashion.html?cat=Jewelry">
+              <img
+                src="https://images.pexels.com/photos/935743/pexels-photo-935743.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop"
+                alt="Fine jewelry"
+                loading="lazy"
+              />
+              <div class="cat-shade"></div>
+              <div class="cat-line">
+                <span class="badge badge-glass">Level 2</span>
+              </div>
+              <div class="cat-body">
+                <i class="fa-solid fa-gem cat-icon"></i>
+                <h3>Jewelry</h3>
+                <span>Single-atelier pieces</span>
+              </div>
+            </a>
+            <a class="cat-card" href="pages/fashion.html?cat=Accessories">
+              <img
+                src="https://images.pexels.com/photos/210474/pexels-photo-210474.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop"
+                alt="Fashion accessories"
+                loading="lazy"
+              />
+              <div class="cat-shade"></div>
+              <div class="cat-line">
+                <span class="badge badge-glass">Mezzanine</span>
+              </div>
+              <div class="cat-body">
+                <i class="fa-solid fa-glasses cat-icon"></i>
+                <h3>Accessories</h3>
+                <span>Eyewear &amp; objet</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
 
-  var events = document.getElementById('homeEvents');
-  if (events) {
-    function evDate(d) { var m = new Date(d); return m.toLocaleDateString('en-GB', { month: 'short' }).toUpperCase(); }
-    events.innerHTML = D.events().filter(function (ev) { return ev.status === 'published'; }).slice(0, 3).map(function (ev, i) {
-      var m = new Date(ev.date);
-      return '<div class="col-lg-6"><article class="card-lux event-card reveal" style="animation-delay:' + (i * 0.1) + 's">' +
-        '<div class="media"><img src="' + img(ev.img) + '" alt="' + e(ev.title) + '" loading="lazy">' +
-        '<div class="event-date"><span>' + evDate(ev.date) + '</span><b>' + m.getDate() + '</b></div></div>' +
-        '<div class="event-body">' +
-        '<span class="store-cat" style="font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:800">' + e(ev.cat) + '</span>' +
-        '<h3>' + e(ev.title) + '</h3>' +
-        '<div class="event-meta"><span><i class="fa-solid fa-calendar"></i>' + D.fmtDate(ev.date) + ' \u00B7 ' + e(ev.time) + '</span>' +
-        '<span><i class="fa-solid fa-location-dot"></i>' + e(ev.location) + '</span></div>' +
-        '<p class="desc">' + e(ev.desc) + '</p>' +
-        '<div class="event-foot"><a class="btn btn-gold btn-sm" href="pages/events.html?event=' + ev.id + '"><i class="fa-solid fa-arrow-right"></i> View Event</a></div>' +
-        '</div></article></div>';
-    }).join('');
-  }
+      <!-- ========================== designer clothes ========================== -->
+      <section class="section" id="designer">
+        <div class="container-lux">
+          <div class="sec-head row-split">
+            <div>
+              <div class="overline">Editor's Selection</div>
+              <h2 class="display-2">Designer <em>Collections</em></h2>
+              <p class="lead">
+                Evening wear, tailored separates and hand-finished pieces —
+                presented as an editorial, never a catalogue.
+              </p>
+            </div>
+            <a href="pages/fashion.html" class="btn btn-gold"
+              >View All Pieces <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="prod-grid" id="homeProducts"></div>
+        </div>
+      </section>
 
-  var offers = document.getElementById('homeOffers');
-  if (offers) {
-    offers.innerHTML = D.offers().filter(function (o) { return o.status === 'active'; }).slice(0, 3).map(function (o) {
-      return '<div class="col-md-6 col-xl-4"><article class="card-lux offer-card reveal">' +
-        '<div class="media" style="aspect-ratio:16/10"><img src="' + img(o.img) + '" alt="' + e(o.title) + '" loading="lazy">' +
-        '<div class="offer-disc"><span>' + o.discount + '%<small>off</small></span></div>' +
-        '<div class="offer-badge-row"><span class="badge badge-vip">' + e(o.badge) + '</span></div></div>' +
-        '<div class="offer-body">' +
-        '<span class="store-cat" style="font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:800">' + e(o.store) + '</span>' +
-        '<h3>' + e(o.title) + '</h3><p>' + e(o.desc) + '</p>' +
-        '<div class="offer-meta"><span><i class="fa-solid fa-calendar-check"></i> Ends ' + D.fmtDate(o.end) + '</span>' +
-        '<span class="offer-count"><i class="fa-solid fa-hourglass-half"></i> ' + D.daysUntil(o.end) + ' days left</span></div>' +
-        '<div class="offer-foot"><a class="btn btn-gold btn-sm" href="pages/offers.html?badge=' + encodeURIComponent(o.badge) + '"><i class="fa-solid fa-ticket"></i> View Offer</a></div>' +
-        '</div></article></div>';
-    }).join('');
-  }
+      <!-- ============================ designer shoes ============================ -->
+      <section class="section section-alt" id="shoes">
+        <div class="container-lux">
+          <div class="sec-head row-split">
+            <div>
+              <div class="overline">Icons Of Craft</div>
+              <h2 class="display-2">The <em>Shoe</em> Salons</h2>
+              <p class="lead">
+                Designer sneakers, sculptural heels and full-length boots —
+                lasts cut in Florence and finished at Royale.
+              </p>
+            </div>
+            <a href="pages/fashion.html?cat=Shoes" class="btn btn-ghost"
+              >All Footwear <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="prod-grid" id="homeShoes"></div>
+        </div>
+      </section>
 
-  var services = document.getElementById('homeServices');
-  if (services) {
-    services.innerHTML = D.SERVICES.map(function (s) {
-      return '<div class="card-lux svc-card"><div class="svc-icon"><i class="fa-solid ' + s.icon + '"></i></div><h4>' + e(s.title) + '</h4><p>' + e(s.desc) + '</p></div>';
-    }).join('');
-  }
-})();
-</script>
-</body>
+      <!-- ============================== dining ============================== -->
+      <section class="section" id="dining">
+        <div class="container-lux">
+          <div class="sec-head row-split">
+            <div>
+              <div class="overline">Gastronomy</div>
+              <h2 class="display-2">Dining at the <em>Palace</em></h2>
+              <p class="lead">
+                Two Michelin stars, a tea atelier, a rooftop tasting room —
+                twelve tables across six floors.
+              </p>
+            </div>
+            <a href="pages/dining.html" class="btn btn-ghost"
+              >The Restaurants <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="row g-4" id="homeDining"></div>
+        </div>
+      </section>
+
+      <!-- =========================== entertainment =========================== -->
+      <section class="section section-alt" id="entertainment">
+        <div class="container-lux">
+          <div class="split">
+            <div class="split-media">
+              <img
+                src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/4DX_seats_in_cinema_%28motion_and_environmental_effects_synced_with_the_on-screen_action%29_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg%2C_Norway_2023_IMG_7852.jpg/1400px-4DX_seats_in_cinema_%28motion_and_environmental_effects_synced_with_the_on-screen_action%29_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg%2C_Norway_2023_IMG_7852.jpg"
+                alt="The Royale Cinemas — velvet auditorium"
+                loading="lazy"
+              />
+            </div>
+            <div class="split-body">
+              <div class="overline">Beyond Retail</div>
+              <h2 class="display-2">Entertainment, <em>Perfected</em></h2>
+              <p class="lead">
+                Seven auditoriums of velvet and Dolby Atmos, a kinetic live
+                stage, VR suites and rooftop terraces.
+              </p>
+              <ul class="feat-list">
+                <li>
+                  <i class="fa-solid fa-film"></i>
+                  <div>
+                    <b>The Royale Cinemas</b
+                    ><span>IMAX &amp; champagne foyer — Level 2</span>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-gamepad"></i>
+                  <div>
+                    <b>Aether Arcade</b
+                    ><span>Simulators, esports &amp; VR — Level 2</span>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-music"></i>
+                  <div>
+                    <b>The Sunburst Stage</b
+                    ><span>Live music &amp; fashion shows — Ground</span>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-champagne-glasses"></i>
+                  <div>
+                    <b>Le Dôme Experiences</b
+                    ><span>Private tastings — Level 3</span>
+                  </div>
+                </li>
+              </ul>
+              <a href="pages/entertainment.html" class="btn btn-gold"
+                >Explore Entertainment <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== events ============================== -->
+      <section class="section" id="events">
+        <div class="container-lux">
+          <div class="sec-head row-split">
+            <div>
+              <div class="overline">The Calendar</div>
+              <h2 class="display-2">Moments Worth <em>Dressing For</em></h2>
+              <p class="lead">
+                Fashion presentations, night shopping and private tastings —
+                intimate by design, unforgettable by nature.
+              </p>
+            </div>
+            <a href="pages/events.html" class="btn btn-ghost"
+              >All Events <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="row g-4" id="homeEvents"></div>
+        </div>
+      </section>
+
+      <!-- ============================== offers ============================== -->
+      <section class="section section-alt" id="offers">
+        <div class="container-lux">
+          <div class="sec-head row-split">
+            <div>
+              <div class="overline">Privileges</div>
+              <h2 class="display-2">Exclusive <em>Offers</em></h2>
+              <p class="lead">
+                Limited-season privileges for members and guests — claim them at
+                the boutique with your Royale Card.
+              </p>
+            </div>
+            <a href="pages/offers.html" class="btn btn-gold"
+              >All Offers <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="row g-4" id="homeOffers"></div>
+        </div>
+      </section>
+
+      <!-- ============================== VIP band ============================== -->
+      <section class="vip-band" id="vip">
+        <div
+          class="vip-bg"
+          style="
+            background-image: url(&quot;https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Entrance_lobby_of_Amantaka_luxury_Resort_%26_Hotel_at_blue_hour_in_Luang_Prabang_Laos.jpg/1400px-Entrance_lobby_of_Amantaka_luxury_Resort_%26_Hotel_at_blue_hour_in_Luang_Prabang_Laos.jpg&quot;);
+          "
+        ></div>
+        <div class="vip-shade"></div>
+        <div class="container-lux">
+          <div class="vip-inner">
+            <div class="overline">The Royale Circle</div>
+            <h2>An Address Beyond <em>First Class</em></h2>
+            <p class="lead" style="color: rgba(246, 239, 227, 0.78)">
+              Membership to the Royale Circle is by invitation. Personal
+              shoppers, private lounges and the maison's quietest secrets —
+              reserved for a few.
+            </p>
+            <ul class="vip-list">
+              <li>
+                <i class="fa-solid fa-user-tie"></i> Private personal shopping
+              </li>
+              <li>
+                <i class="fa-solid fa-martini-glass-citrus"></i> VIP member
+                lounges
+              </li>
+              <li>
+                <i class="fa-solid fa-car-side"></i> Valet &amp; chauffeur
+                service
+              </li>
+              <li>
+                <i class="fa-solid fa-bell-concierge"></i> Dedicated concierge
+                desk
+              </li>
+              <li>
+                <i class="fa-solid fa-table-top"></i> Private events &amp;
+                previews
+              </li>
+              <li>
+                <i class="fa-solid fa-champagne-glasses"></i> Members-only
+                dining rooms
+              </li>
+            </ul>
+            <a href="pages/about.html#vip" class="btn btn-gold btn-lg"
+              >Discover the VIP Experience
+              <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="vip-stamp"><b>MR</b><span>Members Only</span></div>
+      </section>
+
+      <!-- ============================ architecture ============================ -->
+      <section class="section" id="architecture">
+        <div class="container-lux">
+          <div class="sec-head">
+            <div class="overline">The Architecture</div>
+            <h2 class="display-2">A Temple Of <em>Retail</em></h2>
+            <p class="lead">
+              Seven storeys of glass, marble and bronze — designed by Atelier
+              Lumi and crowned with a 96-metre atrium.
+            </p>
+          </div>
+          <div class="arch-grid">
+            <div class="arch-item arch-a">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/SC_Mall_atrium_view.jpg/1400px-SC_Mall_atrium_view.jpg"
+                alt="The Grand Atrium at Maison Royale"
+                loading="lazy"
+              />
+              <div class="arch-shade"></div>
+              <div class="arch-body">
+                <span class="arch-no">01</span>
+                <h3>The Grand Atrium</h3>
+                <p>A 96-metre glass cupola above a travertine piazza.</p>
+              </div>
+            </div>
+            <div class="arch-item arch-b">
+              <img
+                src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/HK_KCD_%E5%95%9F%E5%BE%B7_Kai_Tak_AIRSIDE_Shopping_Mall_void_escalators_July_2024_R12S_01.jpg/1400px-HK_KCD_%E5%95%9F%E5%BE%B7_Kai_Tak_AIRSIDE_Shopping_Mall_void_escalators_July_2024_R12S_01.jpg"
+                alt="Sculptural escalators"
+                loading="lazy"
+              />
+              <div class="arch-shade"></div>
+              <div class="arch-body">
+                <span class="arch-no">02</span>
+                <h3>Vertical Gardens</h3>
+                <p>Sculptural escalators wrapped in living green.</p>
+              </div>
+            </div>
+            <div class="arch-item arch-c">
+              <img
+                src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/DZ6_0939_A_modern_hotel_building_lit_up_at_night_its_triangular_fa%C3%A7ade_and_rows_of_balconies_glowing_against_the_dark_sky.jpg/1400px-DZ6_0939_A_modern_hotel_building_lit_up_at_night_its_triangular_fa%C3%A7ade_and_rows_of_balconies_glowing_against_the_dark_sky.jpg"
+                alt="The night façade of Maison Royale"
+                loading="lazy"
+              />
+              <div class="arch-shade"></div>
+              <div class="arch-body">
+                <span class="arch-no">03</span>
+                <h3>The Night Façade</h3>
+                <p>
+                  Triangular glazing that glows across the Goldcrest Quarter.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ customer experience ============================ -->
+      <section class="section section-alt" id="services">
+        <div class="container-lux">
+          <div class="sec-head">
+            <div class="overline">Guest Services</div>
+            <h2 class="display-2">The Maison <em>Anticipates</em></h2>
+            <p class="lead">
+              Every comfort is considered — from arrival by valet to the quiet
+              details on every floor.
+            </p>
+          </div>
+          <div class="svc-grid" id="homeServices"></div>
+        </div>
+      </section>
+
+      <!-- ============================== newsletter ============================== -->
+      <section class="section" id="newsletter">
+        <div class="container-lux">
+          <div class="newsletter">
+            <div>
+              <div class="overline" style="color: var(--gold-2)">
+                The Royale Letter
+              </div>
+              <h2>Stay Ahead of Luxury</h2>
+              <p>
+                Be the first to discover exclusive events, new stores, private
+                experiences, and special offers.
+              </p>
+            </div>
+            <form class="news-form" data-newsletter novalidate>
+              <div class="form-field">
+                <i
+                  class="fa-solid fa-envelope"
+                  style="
+                    position: absolute;
+                    left: 16px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: var(--gold);
+                  "
+                ></i>
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  aria-label="Email address"
+                  required
+                />
+              </div>
+              <button class="btn btn-gold" type="submit">
+                Subscribe <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================================ footer ================================ -->
+    <footer class="site-footer">
+      <div class="container-lux">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="nav-logo" href="index.html"
+              ><span class="monogram"><span>R</span></span
+              ><span class="word"
+                ><b>MAISON ROYALE</b><small>PARIS</small></span
+              ></a
+            >
+            <p>
+              One Royale Avenue, Goldcrest Quarter — the world's ultimate
+              destination for luxury shopping, dining, entertainment and
+              lifestyle.
+            </p>
+            <div class="social-row">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="X"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a
+                href="https://tiktok.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="TikTok"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+          <div>
+            <h5>Mall</h5>
+            <ul class="foot-links">
+              <li><a href="pages/about.html">About</a></li>
+              <li><a href="pages/stores.html">Stores</a></li>
+              <li><a href="pages/stores.html">Directory</a></li>
+              <li><a href="pages/events.html">Events</a></li>
+              <li><a href="pages/offers.html">Offers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Services</h5>
+            <ul class="foot-links">
+              <li><a href="pages/contact.html">Concierge</a></li>
+              <li><a href="pages/about.html#services">Parking</a></li>
+              <li><a href="pages/about.html#services">Accessibility</a></li>
+              <li><a href="pages/offers.html">Gift Cards</a></li>
+              <li><a href="pages/contact.html">Customer Service</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Information</h5>
+            <ul class="foot-links">
+              <li><a href="pages/contact.html">Opening Hours</a></li>
+              <li><a href="pages/contact.html">Location</a></li>
+              <li><a href="pages/contact.html">Contact</a></li>
+              <li><a href="pages/about.html#policies">Privacy Policy</a></li>
+              <li><a href="pages/about.html#policies">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            © <span class="footer-year">2026</span> Maison Royale. All rights
+            reserved.
+          </p>
+          <div class="foot-mini">
+            <a href="pages/about.html#policies">Privacy</a>
+            <a href="pages/about.html#policies">Terms</a>
+            <a href="dashboard/index.html">Management Portal</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/img-map.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      (function () {
+        "use strict";
+        var D = window.MallData;
+        var IMG = window.MR_IMG || {};
+        if (!D) return;
+        function img(k) {
+          return D.IMG[k] || IMG[k] || "";
+        }
+        function e(v) {
+          return D.esc(v);
+        }
+        function price(r) {
+          return (
+            D.money(r.price) +
+            (r.old ? " <small>" + D.money(r.old) + "</small>" : "")
+          );
+        }
+        function moneyIcon(v) {
+          return "€".repeat(Math.max(1, Math.min(4, v)));
+        }
+
+        var brands = document.getElementById("homeBrands");
+        if (brands) {
+          brands.innerHTML = D.BRANDS.map(function (b) {
+            return (
+              '<article class="card-lux brand-card reveal">' +
+              '<div class="b-mono">' +
+              e(b.mono) +
+              "</div>" +
+              "<h3>" +
+              e(b.name) +
+              '</h3><span class="b-cat">' +
+              e(b.cat) +
+              "</span>" +
+              "<p>" +
+              e(b.blurb) +
+              "</p>" +
+              '<div class="b-floor"><span><i class="fa-solid fa-layer-group"></i> ' +
+              (D.SITE.floorNames[b.floor] || "Level " + b.floor) +
+              "</span></div>" +
+              '<a href="pages/stores.html?q=' +
+              encodeURIComponent(b.name) +
+              '" class="btn btn-ghost btn-sm mt-3"><i class="fa-solid fa-arrow-right"></i> View Store</a>' +
+              "</article>"
+            );
+          }).join("");
+        }
+
+        function prodCard(r) {
+          return (
+            '<article class="card-lux prod-card reveal">' +
+            '<div class="media" style="aspect-ratio:4/5"><img src="' +
+            img(r.img) +
+            '" alt="' +
+            e(r.name) +
+            '" loading="lazy">' +
+            (r.status === "limited"
+              ? '<div class="prod-save"><span class="badge badge-gold">Limited</span></div>'
+              : "") +
+            '<div class="prod-view"><a class="btn btn-gold btn-sm" href="pages/fashion.html?p=' +
+            r.id +
+            '"><i class="fa-solid fa-eye"></i> View Details</a></div>' +
+            "</div>" +
+            '<div class="prod-body">' +
+            '<span class="prod-brand">' +
+            e(r.brand) +
+            "</span>" +
+            "<h3>" +
+            e(r.name) +
+            "</h3>" +
+            '<span class="prod-cat">' +
+            e(r.cat) +
+            "</span>" +
+            '<div class="prod-foot"><span class="prod-price">' +
+            price(r) +
+            "</span></div>" +
+            "</div></article>"
+          );
+        }
+
+        var products = document.getElementById("homeProducts");
+        if (products)
+          products.innerHTML = D.products()
+            .filter(function (p) {
+              return p.status !== "unavailable";
+            })
+            .slice(0, 8)
+            .map(prodCard)
+            .join("");
+        var shoes = document.getElementById("homeShoes");
+        if (shoes) {
+          shoes.innerHTML = D.products()
+            .filter(function (p) {
+              return (
+                [
+                  "Formal Shoes",
+                  "Loafers",
+                  "Heels",
+                  "Sneakers",
+                  "Boots",
+                  "Sandals",
+                ].indexOf(p.cat) !== -1
+              );
+            })
+            .slice(0, 6)
+            .map(prodCard)
+            .join("");
+        }
+        var dining = document.getElementById("homeDining");
+        if (dining) {
+          dining.innerHTML = D.restaurants()
+            .slice(0, 4)
+            .map(function (r) {
+              return (
+                '<div class="col-md-6 col-xl-3"><article class="card-lux rest-card reveal">' +
+                '<div class="media" style="aspect-ratio:16/10"><img src="' +
+                img(r.img) +
+                '" alt="' +
+                e(r.name) +
+                '" loading="lazy"></div>' +
+                '<div class="rest-body">' +
+                '<div class="rest-head"><div><span class="rest-cuisine">' +
+                e(r.cuisine) +
+                "</span><h3>" +
+                e(r.name) +
+                "</h3></div>" +
+                '<span class="rest-price">' +
+                moneyIcon(r.price) +
+                "</span></div>" +
+                "<p>" +
+                e(r.desc) +
+                "</p>" +
+                '<div class="rest-meta"><span><i class="fa-solid fa-clock"></i>' +
+                e(r.hours) +
+                '</span><span><i class="fa-solid fa-layer-group"></i> Level ' +
+                e(r.floor) +
+                "</span></div>" +
+                '<div class="rest-foot"><a class="btn btn-gold btn-sm" href="pages/dining.html?r=' +
+                r.id +
+                '"><i class="fa-solid fa-utensils"></i> View Restaurant</a></div>' +
+                "</div></article></div>"
+              );
+            })
+            .join("");
+        }
+
+        var events = document.getElementById("homeEvents");
+        if (events) {
+          function evDate(d) {
+            var m = new Date(d);
+            return m
+              .toLocaleDateString("en-GB", { month: "short" })
+              .toUpperCase();
+          }
+          events.innerHTML = D.events()
+            .filter(function (ev) {
+              return ev.status === "published";
+            })
+            .slice(0, 3)
+            .map(function (ev, i) {
+              var m = new Date(ev.date);
+              return (
+                '<div class="col-lg-6"><article class="card-lux event-card reveal" style="animation-delay:' +
+                i * 0.1 +
+                's">' +
+                '<div class="media"><img src="' +
+                img(ev.img) +
+                '" alt="' +
+                e(ev.title) +
+                '" loading="lazy">' +
+                '<div class="event-date"><span>' +
+                evDate(ev.date) +
+                "</span><b>" +
+                m.getDate() +
+                "</b></div></div>" +
+                '<div class="event-body">' +
+                '<span class="store-cat" style="font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:800">' +
+                e(ev.cat) +
+                "</span>" +
+                "<h3>" +
+                e(ev.title) +
+                "</h3>" +
+                '<div class="event-meta"><span><i class="fa-solid fa-calendar"></i>' +
+                D.fmtDate(ev.date) +
+                " \u00B7 " +
+                e(ev.time) +
+                "</span>" +
+                '<span><i class="fa-solid fa-location-dot"></i>' +
+                e(ev.location) +
+                "</span></div>" +
+                '<p class="desc">' +
+                e(ev.desc) +
+                "</p>" +
+                '<div class="event-foot"><a class="btn btn-gold btn-sm" href="pages/events.html?event=' +
+                ev.id +
+                '"><i class="fa-solid fa-arrow-right"></i> View Event</a></div>' +
+                "</div></article></div>"
+              );
+            })
+            .join("");
+        }
+
+        var offers = document.getElementById("homeOffers");
+        if (offers) {
+          offers.innerHTML = D.offers()
+            .filter(function (o) {
+              return o.status === "active";
+            })
+            .slice(0, 3)
+            .map(function (o) {
+              return (
+                '<div class="col-md-6 col-xl-4"><article class="card-lux offer-card reveal">' +
+                '<div class="media" style="aspect-ratio:16/10"><img src="' +
+                img(o.img) +
+                '" alt="' +
+                e(o.title) +
+                '" loading="lazy">' +
+                '<div class="offer-disc"><span>' +
+                o.discount +
+                "%<small>off</small></span></div>" +
+                '<div class="offer-badge-row"><span class="badge badge-vip">' +
+                e(o.badge) +
+                "</span></div></div>" +
+                '<div class="offer-body">' +
+                '<span class="store-cat" style="font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:800">' +
+                e(o.store) +
+                "</span>" +
+                "<h3>" +
+                e(o.title) +
+                "</h3><p>" +
+                e(o.desc) +
+                "</p>" +
+                '<div class="offer-meta"><span><i class="fa-solid fa-calendar-check"></i> Ends ' +
+                D.fmtDate(o.end) +
+                "</span>" +
+                '<span class="offer-count"><i class="fa-solid fa-hourglass-half"></i> ' +
+                D.daysUntil(o.end) +
+                " days left</span></div>" +
+                '<div class="offer-foot"><a class="btn btn-gold btn-sm" href="pages/offers.html?badge=' +
+                encodeURIComponent(o.badge) +
+                '"><i class="fa-solid fa-ticket"></i> View Offer</a></div>' +
+                "</div></article></div>"
+              );
+            })
+            .join("");
+        }
+
+        var services = document.getElementById("homeServices");
+        if (services) {
+          services.innerHTML = D.SERVICES.map(function (s) {
+            return (
+              '<div class="card-lux svc-card"><div class="svc-icon"><i class="fa-solid ' +
+              s.icon +
+              '"></i></div><h4>' +
+              e(s.title) +
+              "</h4><p>" +
+              e(s.desc) +
+              "</p></div>"
+            );
+          }).join("");
+        }
+      })();
+    </script>
+  </body>
 </html>

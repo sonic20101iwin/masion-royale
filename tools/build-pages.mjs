@@ -3,175 +3,313 @@
 // Builds pages/fashion.html, dining.html, entertainment.html, events.html,
 // offers.html, about.html, contact.html from a shared chrome shell.
 // ============================================================================
-import { writeFileSync, mkdirSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, resolve } from 'path';
+import { writeFileSync, mkdirSync } from "fs";
+import { fileURLToPath } from "url";
+import { dirname, resolve } from "path";
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const OUT = resolve(ROOT, 'pages');
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const OUT = resolve(ROOT, "pages");
 mkdirSync(OUT, { recursive: true });
 
 const NAV_ITEMS = [
-  { key: 'home', label: 'Home', href: 'index.html' },
-  { key: 'stores', label: 'Stores', href: 'pages/stores.html' },
-  { key: 'fashion', label: 'Fashion', href: 'pages/fashion.html' },
-  { key: 'dining', label: 'Dining', href: 'pages/dining.html' },
-  { key: 'entertainment', label: 'Entertainment', href: 'pages/entertainment.html' },
-  { key: 'events', label: 'Events', href: 'pages/events.html' },
-  { key: 'offers', label: 'Offers', href: 'pages/offers.html' },
-  { key: 'about', label: 'About', href: 'pages/about.html' },
-  { key: 'contact', label: 'Contact', href: 'pages/contact.html' }
+  { key: "home", label: "Home", href: "index.html" },
+  { key: "stores", label: "Stores", href: "pages/stores.html" },
+  { key: "fashion", label: "Fashion", href: "pages/fashion.html" },
+  { key: "dining", label: "Dining", href: "pages/dining.html" },
+  {
+    key: "entertainment",
+    label: "Entertainment",
+    href: "pages/entertainment.html",
+  },
+  { key: "events", label: "Events", href: "pages/events.html" },
+  { key: "offers", label: "Offers", href: "pages/offers.html" },
+  { key: "about", label: "About", href: "pages/about.html" },
+  { key: "contact", label: "Contact", href: "pages/contact.html" },
 ];
 
 function nav(active, root) {
   return NAV_ITEMS.map(function (n) {
     let href = n.href;
     if (root) {
-      if (n.key === 'home') href = '../index.html';
-      else href = href.replace(/^pages\//, '');
+      if (n.key === "home") href = "../index.html";
+      else href = href.replace(/^pages\//, "");
     }
-    const cls = n.key === active ? ' class="active"' : '';
-    return '<li><a href="' + href + '"' + cls + '>' + n.label + '</a></li>';
-  }).join('');
+    const cls = n.key === active ? ' class="active"' : "";
+    return '<li><a href="' + href + '"' + cls + ">" + n.label + "</a></li>";
+  }).join("");
 }
 
 function ph(pages, title) {
-  return 'pages/' + title + '.html';
+  return "pages/" + title + ".html";
 }
 function chrome(o) {
-  const root = o.root || '';
+  const root = o.root || "";
   const active = o.active;
-  const BASE = root || '';
-  const P = root ? '' : 'pages/';
+  const BASE = root || "";
+  const P = root ? "" : "pages/";
   const s = [];
   s.push('<!doctype html>\n<html lang="en">\n<head>');
-  s.push('<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">');
-  s.push('<title>' + o.title + '</title>');
+  s.push(
+    '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">',
+  );
+  s.push("<title>" + o.title + "</title>");
   s.push('<meta name="description" content="' + o.desc + '">');
   s.push('<link rel="preconnect" href="https://fonts.googleapis.com">');
-  s.push('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
-  s.push('<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">');
-  s.push('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">');
-  s.push('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">');
+  s.push(
+    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+  );
+  s.push(
+    '<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">',
+  );
+  s.push(
+    '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">',
+  );
+  s.push(
+    '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">',
+  );
   s.push('<link rel="stylesheet" href="' + BASE + 'css/style.css">');
   s.push('<link rel="stylesheet" href="' + BASE + 'css/responsive.css">');
-  s.push('</head>');
+  s.push("</head>");
   s.push('<body data-page="' + active + '" data-root="' + root + '">');
-  s.push('<div class="topbar"><div class="container-lux"><div class="tb-left">');
-  s.push('<span class="topbar-phone"><i class="fa-solid fa-phone"></i> +33 1 42 60 00 00</span>');
-  s.push('<span class="tb-sep"></span><span class="topbar-hours"><i class="fa-solid fa-clock"></i> Mon\u2013Sat 10:00 \u2013 22:00 \u00B7 Sun 11:00 \u2013 20:00</span></div>');
-  s.push('<div class="tb-right"><a href="' + P + 'about.html"><i class="fa-solid fa-crown"></i> The Royale Circle</a>');
-  s.push('<span class="tb-sep"></span><a href="' + BASE + 'dashboard/index.html"><i class="fa-solid fa-sliders"></i> Management Portal</a>');
-  s.push('</div></div></div>');
-  s.push('<header class="navbar-lux"><div class="container-lux"><div class="nav-inner">');
-  s.push('<a class="nav-logo" href="' + BASE + 'index.html" aria-label="Maison Royale \u2014 Home"><span class="monogram"><span>R</span></span><span class="word"><b>MAISON ROYALE</b><small>PARIS</small></span></a>');
-  s.push('<nav aria-label="Primary"><ul class="nav-menu">' + nav(active, root) + '</ul></nav>');
+  s.push(
+    '<div class="topbar"><div class="container-lux"><div class="tb-left">',
+  );
+  s.push(
+    '<span class="topbar-phone"><i class="fa-solid fa-phone"></i> +33 1 42 60 00 00</span>',
+  );
+  s.push(
+    '<span class="tb-sep"></span><span class="topbar-hours"><i class="fa-solid fa-clock"></i> Mon\u2013Sat 10:00 \u2013 22:00 \u00B7 Sun 11:00 \u2013 20:00</span></div>',
+  );
+  s.push(
+    '<div class="tb-right"><a href="' +
+      P +
+      'about.html"><i class="fa-solid fa-crown"></i> The Royale Circle</a>',
+  );
+  s.push(
+    '<span class="tb-sep"></span><a href="' +
+      BASE +
+      'dashboard/index.html"><i class="fa-solid fa-sliders"></i> Management Portal</a>',
+  );
+  s.push("</div></div></div>");
+  s.push(
+    '<header class="navbar-lux"><div class="container-lux"><div class="nav-inner">',
+  );
+  s.push(
+    '<a class="nav-logo" href="' +
+      BASE +
+      'index.html" aria-label="Maison Royale \u2014 Home"><span class="monogram"><span>R</span></span><span class="word"><b>MAISON ROYALE</b><small>PARIS</small></span></a>',
+  );
+  s.push(
+    '<nav aria-label="Primary"><ul class="nav-menu">' +
+      nav(active, root) +
+      "</ul></nav>",
+  );
   s.push('<div class="nav-actions">');
-  s.push('<button class="icon-btn" data-search-open aria-label="Search the mall"><i class="fa-solid fa-magnifying-glass"></i></button>');
-  s.push('<a class="icon-btn has-dot" href="' + P + 'offers.html" aria-label="Exclusive offers"><i class="fa-solid fa-bag-shopping"></i><span class="dot"></span></a>');
-  s.push('<a class="btn btn-gold btn-sm admin-pill" href="' + BASE + 'dashboard/index.html"><i class="fa-solid fa-sliders"></i> Manager</a>');
-  s.push('<button class="icon-btn nav-toggle" data-drawer-open aria-label="Open menu" aria-controls="mobileDrawer"><i class="fa-solid fa-bars"></i></button>');
-  s.push('</div></div></div></header>');
-  s.push('<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu">');
-  s.push('<div class="drawer-backdrop" data-drawer-close></div><div class="drawer-panel">');
-  s.push('<div class="drawer-head"><a class="nav-logo" href="' + BASE + 'index.html"><span class="monogram"><span>R</span></span><span class="word"><b>MAISON ROYALE</b></span></a>');
-  s.push('<button class="icon-btn" data-drawer-close aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button></div>');
-  s.push('<ul class="drawer-links">' + nav(active, root) + '</ul>');
-  s.push('<div class="drawer-cta"><a href="' + P + 'offers.html" class="btn btn-gold w-100 mb-2"><i class="fa-solid fa-tag"></i> Exclusive Offers</a>');
-  s.push('<a href="' + BASE + 'dashboard/index.html" class="btn btn-ghost w-100"><i class="fa-solid fa-sliders"></i> Management Portal</a></div>');
-  s.push('</div></div>');
+  s.push(
+    '<button class="icon-btn" data-search-open aria-label="Search the mall"><i class="fa-solid fa-magnifying-glass"></i></button>',
+  );
+  s.push(
+    '<a class="icon-btn has-dot" href="' +
+      P +
+      'offers.html" aria-label="Exclusive offers"><i class="fa-solid fa-bag-shopping"></i><span class="dot"></span></a>',
+  );
+  s.push(
+    '<a class="btn btn-gold btn-sm admin-pill" href="' +
+      BASE +
+      'dashboard/index.html"><i class="fa-solid fa-sliders"></i> Manager</a>',
+  );
+  s.push(
+    '<button class="icon-btn nav-toggle" data-drawer-open aria-label="Open menu" aria-controls="mobileDrawer"><i class="fa-solid fa-bars"></i></button>',
+  );
+  s.push("</div></div></div></header>");
+  s.push(
+    '<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu">',
+  );
+  s.push(
+    '<div class="drawer-backdrop" data-drawer-close></div><div class="drawer-panel">',
+  );
+  s.push(
+    '<div class="drawer-head"><a class="nav-logo" href="' +
+      BASE +
+      'index.html"><span class="monogram"><span>R</span></span><span class="word"><b>MAISON ROYALE</b></span></a>',
+  );
+  s.push(
+    '<button class="icon-btn" data-drawer-close aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button></div>',
+  );
+  s.push('<ul class="drawer-links">' + nav(active, root) + "</ul>");
+  s.push(
+    '<div class="drawer-cta"><a href="' +
+      P +
+      'offers.html" class="btn btn-gold w-100 mb-2"><i class="fa-solid fa-tag"></i> Exclusive Offers</a>',
+  );
+  s.push(
+    '<a href="' +
+      BASE +
+      'dashboard/index.html" class="btn btn-ghost w-100"><i class="fa-solid fa-sliders"></i> Management Portal</a></div>',
+  );
+  s.push("</div></div>");
   s.push('<div class="search-overlay" id="searchOverlay" aria-hidden="true">');
   s.push('<div class="so-backdrop" data-search-close></div>');
-  s.push('<div class="so-panel" role="dialog" aria-modal="true" aria-label="Search the mall">');
+  s.push(
+    '<div class="so-panel" role="dialog" aria-modal="true" aria-label="Search the mall">',
+  );
   s.push('<div class="so-bar"><i class="fa-solid fa-magnifying-glass"></i>');
-  s.push('<input class="so-input" type="text" placeholder="Search stores, dining, events, offers\u2026" aria-label="Search" autocomplete="off">');
-  s.push('<button class="so-close" data-search-close aria-label="Close search"><i class="fa-solid fa-xmark"></i></button></div>');
+  s.push(
+    '<input class="so-input" type="text" placeholder="Search stores, dining, events, offers\u2026" aria-label="Search" autocomplete="off">',
+  );
+  s.push(
+    '<button class="so-close" data-search-close aria-label="Close search"><i class="fa-solid fa-xmark"></i></button></div>',
+  );
   s.push('<div class="so-body"></div>');
-  s.push('<div class="so-hint"><span><kbd>\u21B5</kbd> open result</span><span><kbd>ESC</kbd> close search</span></div>');
-  s.push('</div></div>');
+  s.push(
+    '<div class="so-hint"><span><kbd>\u21B5</kbd> open result</span><span><kbd>ESC</kbd> close search</span></div>',
+  );
+  s.push("</div></div>");
   return s;
 }
 function finish(s, o, BASE) {
   s.push('<main id="main">');
-  s.push(o.hero || '');
-  s.push(o.body || '');
-  s.push('</main>');
-  s.push(o.footerHtml || '');
-  s.push(o.modals || '');
-  s.push('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>');
+  s.push(o.hero || "");
+  s.push(o.body || "");
+  s.push("</main>");
+  s.push(o.footerHtml || "");
+  s.push(o.modals || "");
+  s.push(
+    '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>',
+  );
   s.push('<script src="' + BASE + 'js/img-map.js"></script>');
   s.push('<script src="' + BASE + 'js/data.js"></script>');
   s.push('<script src="' + BASE + 'js/main.js"></script>');
-  (o.pageScripts || []).forEach(function (p) { s.push('<script src="' + BASE + 'js/' + p + '"></script>'); });
-  if (o.inline) s.push('<script>' + o.inline + '</script>');
-  s.push('</body>\n</html>');
-  return s.join('\n');
+  (o.pageScripts || []).forEach(function (p) {
+    s.push('<script src="' + BASE + "js/" + p + '"></script>');
+  });
+  if (o.inline) s.push("<script>" + o.inline + "</script>");
+  s.push("</body>\n</html>");
+  return s.join("\n");
 }
 
 function pageHero(crumbCurrent, h1, p, bg) {
-  return '<section class="page-hero">' +
-    (bg ? '<div class="ph-bg"><img src="' + bg + '" alt="" aria-hidden="true"></div>' : '') +
+  return (
+    '<section class="page-hero">' +
+    (bg
+      ? '<div class="ph-bg"><img src="' +
+        bg +
+        '" alt="" aria-hidden="true"></div>'
+      : "") +
     '<div class="ph-shade"></div><div class="container-lux"><div class="ph-inner">' +
-    '<div class="ph-crumb"><a href="../index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>' + crumbCurrent + '</span></div>' +
-    '<h1>' + h1 + '</h1><p>' + p + '</p></div></div></section>';
+    '<div class="ph-crumb"><a href="../index.html">Home</a> <i class="fa-solid fa-chevron-right"></i> <span>' +
+    crumbCurrent +
+    "</span></div>" +
+    "<h1>" +
+    h1 +
+    "</h1><p>" +
+    p +
+    "</p></div></div></section>"
+  );
 }
 
 function footerHtml(root) {
-  const P = root ? '' : 'pages/';
-  const B = root || '';
-  return '<footer class="site-footer"><div class="container-lux"><div class="footer-grid">' +
+  const P = root ? "" : "pages/";
+  const B = root || "";
+  return (
+    '<footer class="site-footer"><div class="container-lux"><div class="footer-grid">' +
     '<div class="footer-brand">' +
-    '<a class="nav-logo" href="' + B + 'index.html"><span class="monogram"><span>R</span></span><span class="word"><b>MAISON ROYALE</b><small>PARIS</small></span></a>' +
-    '<p>One Royale Avenue, Goldcrest Quarter \u2014 the world\'s ultimate destination for luxury shopping, dining, entertainment and lifestyle.</p>' +
+    '<a class="nav-logo" href="' +
+    B +
+    'index.html"><span class="monogram"><span>R</span></span><span class="word"><b>MAISON ROYALE</b><small>PARIS</small></span></a>' +
+    "<p>One Royale Avenue, Goldcrest Quarter \u2014 the world's ultimate destination for luxury shopping, dining, entertainment and lifestyle.</p>" +
     '<div class="social-row">' +
     '<a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>' +
     '<a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>' +
     '<a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>' +
     '<a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>' +
     '<a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>' +
-    '</div></div>' +
+    "</div></div>" +
     '<div><h5>Mall</h5><ul class="foot-links">' +
-    '<li><a href="' + P + 'about.html">About</a></li>' +
-    '<li><a href="' + P + 'stores.html">Stores</a></li>' +
-    '<li><a href="' + P + 'stores.html">Directory</a></li>' +
-    '<li><a href="' + P + 'events.html">Events</a></li>' +
-    '<li><a href="' + P + 'offers.html">Offers</a></li></ul></div>' +
+    '<li><a href="' +
+    P +
+    'about.html">About</a></li>' +
+    '<li><a href="' +
+    P +
+    'stores.html">Stores</a></li>' +
+    '<li><a href="' +
+    P +
+    'stores.html">Directory</a></li>' +
+    '<li><a href="' +
+    P +
+    'events.html">Events</a></li>' +
+    '<li><a href="' +
+    P +
+    'offers.html">Offers</a></li></ul></div>' +
     '<div><h5>Services</h5><ul class="foot-links">' +
-    '<li><a href="' + P + 'contact.html">Concierge</a></li>' +
-    '<li><a href="' + P + 'about.html#services">Parking</a></li>' +
-    '<li><a href="' + P + 'about.html#services">Accessibility</a></li>' +
-    '<li><a href="' + P + 'offers.html">Gift Cards</a></li>' +
-    '<li><a href="' + P + 'contact.html">Customer Service</a></li></ul></div>' +
+    '<li><a href="' +
+    P +
+    'contact.html">Concierge</a></li>' +
+    '<li><a href="' +
+    P +
+    'about.html#services">Parking</a></li>' +
+    '<li><a href="' +
+    P +
+    'about.html#services">Accessibility</a></li>' +
+    '<li><a href="' +
+    P +
+    'offers.html">Gift Cards</a></li>' +
+    '<li><a href="' +
+    P +
+    'contact.html">Customer Service</a></li></ul></div>' +
     '<div><h5>Information</h5><ul class="foot-links">' +
-    '<li><a href="' + P + 'contact.html">Opening Hours</a></li>' +
-    '<li><a href="' + P + 'contact.html">Location</a></li>' +
-    '<li><a href="' + P + 'contact.html">Contact</a></li>' +
-    '<li><a href="' + P + 'about.html#policies">Privacy Policy</a></li>' +
-    '<li><a href="' + P + 'about.html#policies">Terms</a></li></ul></div>' +
+    '<li><a href="' +
+    P +
+    'contact.html">Opening Hours</a></li>' +
+    '<li><a href="' +
+    P +
+    'contact.html">Location</a></li>' +
+    '<li><a href="' +
+    P +
+    'contact.html">Contact</a></li>' +
+    '<li><a href="' +
+    P +
+    'about.html#policies">Privacy Policy</a></li>' +
+    '<li><a href="' +
+    P +
+    'about.html#policies">Terms</a></li></ul></div>' +
     '</div><div class="footer-bottom"><p>\u00A9 <span class="footer-year">2026</span> Maison Royale. All rights reserved.</p>' +
-    '<div class="foot-mini"><a href="' + P + 'about.html#policies">Privacy</a><a href="' + P + 'about.html#policies">Terms</a>' +
-    '<a href="' + B + 'dashboard/index.html">Management Portal</a></div></div></div></footer>';
+    '<div class="foot-mini"><a href="' +
+    P +
+    'about.html#policies">Privacy</a><a href="' +
+    P +
+    'about.html#policies">Terms</a>' +
+    '<a href="' +
+    B +
+    'dashboard/index.html">Management Portal</a></div></div></div></footer>'
+  );
 }
 
 function page(opts) {
-  opts.root = opts.root || '../';
+  opts.root = opts.root || "../";
   opts.footerHtml = opts.footerHtml || footerHtml(opts.root);
   const s = chrome(opts);
   return finish(s, opts, opts.root);
 }
 
 const PAGES = {};
-function def(name, opts) { PAGES[name] = opts; }
+function def(name, opts) {
+  PAGES[name] = opts;
+}
 // ============================== FASHION ==============================
-def('fashion', {
-  title: 'Fashion — Maison Royale',
-  desc: 'Editorial collections — womenswear, menswear, shoes, bags, watches, jewelry and accessories from the world\'s coveted houses.',
-  active: 'fashion',
-  hero: pageHero('Fashion', 'Fashion <em>Collections</em>',
-    'A living archive of the maison — search every piece by house, category or mood.',
-    'https://images.pexels.com/photos/14528152/pexels-photo-14528152.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop'),
-  pageScripts: ['fashion.js'],
-  modals: '<div class="modal fade modal-lux" id="fashionModal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Piece details"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"></div></div></div>',
+def("fashion", {
+  title: "Fashion — Maison Royale",
+  desc: "Editorial collections — womenswear, menswear, shoes, bags, watches, jewelry and accessories from the world's coveted houses.",
+  active: "fashion",
+  hero: pageHero(
+    "Fashion",
+    "Fashion <em>Collections</em>",
+    "A living archive of the maison — search every piece by house, category or mood.",
+    "https://images.pexels.com/photos/14528152/pexels-photo-14528152.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+  ),
+  pageScripts: ["fashion.js"],
+  modals:
+    '<div class="modal fade modal-lux" id="fashionModal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Piece details"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"></div></div></div>',
   body: `
   <section class="section">
     <div class="container-lux">
@@ -196,19 +334,23 @@ def('fashion', {
       <div class="result-count" id="fashionCount"><b>0</b> pieces</div>
       <div class="row g-4" id="fashionGrid"></div>
     </div>
-  </section>`
+  </section>`,
 });
 
 // ============================== DINING ==============================
-def('dining', {
-  title: 'Dining — Maison Royale',
-  desc: 'Twelve world-class tables — fine dining, caf\u00E9s, international cuisine and dessert salons across six floors.',
-  active: 'dining',
-  hero: pageHero('Dining', 'Dining at the <em>Palace</em>',
-    'From two Michelin stars to a rooftop tasting room \u2014 book a seat across twelve signature tables.',
-    'https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop'),
-  pageScripts: ['dining.js'],
-  modals: '<div class="modal fade modal-lux" id="diningModal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Restaurant details"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"></div></div></div>',
+def("dining", {
+  title: "Dining — Maison Royale",
+  desc: "Twelve world-class tables — fine dining, caf\u00E9s, international cuisine and dessert salons across six floors.",
+  active: "dining",
+  hero: pageHero(
+    "Dining",
+    "Dining at the <em>Palace</em>",
+    "From two Michelin stars to a rooftop tasting room \u2014 book a seat across twelve signature tables.",
+    "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+  ),
+  pageScripts: ["dining.js"],
+  modals:
+    '<div class="modal fade modal-lux" id="diningModal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Restaurant details"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"></div></div></div>',
   body: `
   <section class="section">
     <div class="container-lux">
@@ -229,19 +371,23 @@ def('dining', {
       <div class="result-count" id="diningCount"><b>0</b> restaurants</div>
       <div class="row g-4" id="diningGrid"></div>
     </div>
-  </section>`
+  </section>`,
 });
 
 // =========================== ENTERTAINMENT ===========================
-def('entertainment', {
-  title: 'Entertainment — Maison Royale',
-  desc: 'Cinema, gaming, family and luxury experiences \u2014 something extraordinary on every floor after dark.',
-  active: 'entertainment',
-  hero: pageHero('Entertainment', 'Entertainment, <em>Perfected</em>',
-    'Velvet auditoriums, kinetic stages, VR suites and rooftop terraces \u2014 the maison stays awake with you.',
-    'https://images.pexels.com/photos/1487154/pexels-photo-1487154.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop'),
-  pageScripts: ['entertainment.js'],
-  modals: '<div class="modal fade modal-lux" id="entModal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Venue details"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"></div></div></div>',
+def("entertainment", {
+  title: "Entertainment — Maison Royale",
+  desc: "Cinema, gaming, family and luxury experiences \u2014 something extraordinary on every floor after dark.",
+  active: "entertainment",
+  hero: pageHero(
+    "Entertainment",
+    "Entertainment, <em>Perfected</em>",
+    "Velvet auditoriums, kinetic stages, VR suites and rooftop terraces \u2014 the maison stays awake with you.",
+    "https://images.pexels.com/photos/1487154/pexels-photo-1487154.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+  ),
+  pageScripts: ["entertainment.js"],
+  modals:
+    '<div class="modal fade modal-lux" id="entModal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Venue details"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"></div></div></div>',
   body: `
   <section class="section">
     <div class="container-lux">
@@ -258,18 +404,22 @@ def('entertainment', {
       <div class="result-count" id="entCount"><b>0</b> venues</div>
       <div class="row g-4" id="entGrid"></div>
     </div>
-  </section>`
+  </section>`,
 });
 // =============================== EVENTS ===============================
-def('events', {
-  title: 'Events — Maison Royale',
-  desc: 'Fashion shows, live music, night shopping and private previews \u2014 the maison\u2019s calendar of moments.',
-  active: 'events',
-  hero: pageHero('Events', 'The Royale <em>Calendar</em>',
-    'Fashion presentations, night shopping and private tastings \u2014 reserve your seat before the doors close.',
-    'https://images.pexels.com/photos/8193520/pexels-photo-8193520.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop'),
-  pageScripts: ['events.js'],
-  modals: '<div class="modal fade modal-lux" id="eventModal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Event details"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"></div></div></div>',
+def("events", {
+  title: "Events — Maison Royale",
+  desc: "Fashion shows, live music, night shopping and private previews \u2014 the maison\u2019s calendar of moments.",
+  active: "events",
+  hero: pageHero(
+    "Events",
+    "The Royale <em>Calendar</em>",
+    "Fashion presentations, night shopping and private tastings \u2014 reserve your seat before the doors close.",
+    "https://images.pexels.com/photos/8193520/pexels-photo-8193520.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+  ),
+  pageScripts: ["events.js"],
+  modals:
+    '<div class="modal fade modal-lux" id="eventModal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Event details"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"></div></div></div>',
   body: `
   <section class="section">
     <div class="container-lux">
@@ -286,18 +436,21 @@ def('events', {
       <div class="result-count" id="eventCount"><b>0</b> events</div>
       <div class="row g-4" id="eventGrid"></div>
     </div>
-  </section>`
+  </section>`,
 });
 
 // =============================== OFFERS ===============================
-def('offers', {
-  title: 'Exclusive Offers — Maison Royale',
-  desc: 'Limited-season promotions, VIP privileges and private previews \u2014 claim them with your Royale Card.',
-  active: 'offers',
-  hero: pageHero('Offers', 'Exclusive <em>Privileges</em>',
-    'Limited-season offers from the maison\u2019s finest boutiques \u2014 claim before the season ends.',
-    'https://images.pexels.com/photos/2536965/pexels-photo-2536965.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop'),
-  pageScripts: ['offers.js'],
+def("offers", {
+  title: "Exclusive Offers — Maison Royale",
+  desc: "Limited-season promotions, VIP privileges and private previews \u2014 claim them with your Royale Card.",
+  active: "offers",
+  hero: pageHero(
+    "Offers",
+    "Exclusive <em>Privileges</em>",
+    "Limited-season offers from the maison\u2019s finest boutiques \u2014 claim before the season ends.",
+    "https://images.pexels.com/photos/2536965/pexels-photo-2536965.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+  ),
+  pageScripts: ["offers.js"],
   body: `
   <section class="section">
     <div class="container-lux">
@@ -312,16 +465,19 @@ def('offers', {
       <div class="result-count" id="offerCount"><b>0</b> live offers</div>
       <div class="row g-4" id="offerGrid"></div>
     </div>
-  </section>`
+  </section>`,
 });
 // ================================ ABOUT ================================
-def('about', {
-  title: 'About — Maison Royale',
-  desc: 'The story, architecture and philosophy of Maison Royale \u2014 six floors of the world\u2019s finest retail destination.',
-  active: 'about',
-  hero: pageHero('About', 'The Maison, <em>Revealed</em>',
-    'Founded in 2012, Maison Royale is a temple of retail \u2014 six floors of glass, marble and the world\u2019s most coveted brands.',
-    'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop'),
+def("about", {
+  title: "About — Maison Royale",
+  desc: "The story, architecture and philosophy of Maison Royale \u2014 six floors of the world\u2019s finest retail destination.",
+  active: "about",
+  hero: pageHero(
+    "About",
+    "The Maison, <em>Revealed</em>",
+    "Founded in 2012, Maison Royale is a temple of retail \u2014 six floors of glass, marble and the world\u2019s most coveted brands.",
+    "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop",
+  ),
   body: `
   <section class="section">
     <div class="container-lux">
@@ -434,16 +590,19 @@ def('about', {
           return '<div class="card-lux svc-card"><div class="svc-icon"><i class="fa-solid ' + s.icon + '"></i></div><h4>' + D.esc(s.title) + '</h4><p>' + D.esc(s.desc) + '</p></div>';
         }).join('');
       }
-    })();`
+    })();`,
 });
 // =============================== CONTACT ===============================
-def('contact', {
-  title: 'Contact — Maison Royale',
-  desc: 'Find Maison Royale on One Royale Avenue, Paris — or write to the concierge.',
-  active: 'contact',
-  hero: pageHero('Contact', 'Find & <em>Reach Us</em>',
-    'One Royale Avenue in the Goldcrest Quarter \u2014 or write to the concierge from anywhere in the world.',
-    'https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/NYC_Night_lights_%287040124053%29.jpg/1400px-NYC_Night_lights_%287040124053%29.jpg'),
+def("contact", {
+  title: "Contact — Maison Royale",
+  desc: "Find Maison Royale on One Royale Avenue, Paris — or write to the concierge.",
+  active: "contact",
+  hero: pageHero(
+    "Contact",
+    "Find & <em>Reach Us</em>",
+    "One Royale Avenue in the Goldcrest Quarter \u2014 or write to the concierge from anywhere in the world.",
+    "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/NYC_Night_lights_%287040124053%29.jpg/1400px-NYC_Night_lights_%287040124053%29.jpg",
+  ),
   body: `
   <section class="section">
     <div class="container-lux">
@@ -533,13 +692,13 @@ def('contact', {
           form.classList.remove('was-valid');
         }
       });
-    })();`
+    })();`,
 });
 
 // ================================ WRITER ================================
 Object.keys(PAGES).forEach(function (name) {
   const html = page(PAGES[name]);
-  writeFileSync(resolve(OUT, name + '.html'), html, 'utf8');
-  console.log('wrote pages/' + name + '.html (' + html.length + ' bytes)');
+  writeFileSync(resolve(OUT, name + ".html"), html, "utf8");
+  console.log("wrote pages/" + name + ".html (" + html.length + " bytes)");
 });
-console.log('DONE');
+console.log("DONE");
